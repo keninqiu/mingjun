@@ -51,7 +51,30 @@ $this->title = 'My Yii Application';
             </ul>
         </nav>
     </div>
+
+
     <div class="col-md-9">
-        <h2>Body</h2>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-3">
+              One of three columns
+            </div>
+            <div class="col-sm-3">
+              One of three columns
+            </div>
+            <div class="col-sm-3">
+              One of three columns
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
     </div>
 </div>
