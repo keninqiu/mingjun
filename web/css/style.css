@@ -1,0 +1,22 @@
+#sidebar {
+    min-width: 130px;
+}
+.nav-link[data-toggle].collapsed:after {
+    content: "▾";
+    text-indent: 15px;
+}
+.nav-link[data-toggle]:not(.collapsed):after {
+    content: "▴";
+}
+
+nav a + div > ul > li > a  {
+    text-indent: 15px; /* Can use padding-left as well */
+}
+
+nav a + div > ul > li > a + div > ul > li > a {
+    text-indent: 30px; /* Can use padding-left as well */
+}
+
+.nav-link {
+	color: black;
+}
