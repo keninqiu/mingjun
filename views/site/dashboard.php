@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <nav>
             <ul class="nav flex-column flex-nowrap">
                 <li class="nav-item"><a class="nav-link" href="/category">Category</a></li>
+                <li class="nav-item"><a class="nav-link" href="/product">Product</a></li>
                 <li class="nav-item">
                     <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Reports</a>
                     <div class="collapse" id="submenu1" aria-expanded="false">

@@ -13,6 +13,15 @@ use Yii;
  */
 class Category extends \yii\db\ActiveRecord
 {
+    public $children;
+
+    public function setChildren($val) {
+        $this->children = $val;
+    }
+
+    public function getChildren($val) {
+        return $this->children;
+    }    
     /**
      * @inheritdoc
      */

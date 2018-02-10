@@ -49,7 +49,7 @@ AppAsset::register($this);
             <div class="col-md-2"  id="sidebar">
                 <ul class="nav-left">
                   <li><a href="/category">Category</a></li>
-                  <li><a href="news.asp">News</a></li>
+                  <li><a href="/product">Products</a></li>
                   <li><a href="contact.asp">Contact</a></li>
                   <li><a href="about.asp">About</a></li>
                 </ul>

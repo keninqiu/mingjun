@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\services\DatabaseUtil;
 
 class SiteController extends Controller
 {
@@ -61,7 +62,29 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $dbUtil = new DatabaseUtil();
+        $categories = $dbUtil->getCategories();
+        return $this->render('index',[
+            'categories' => $categories
+        ]);
+    }
+
+    public function actionSearch() {
+        $dbUtil = new DatabaseUtil();
+        $categories = $dbUtil->getCategories();
+        $request = Yii::$app->request;
+        $category_id = $request->get('category_id');
+
+        $condArray = [];
+        if($category_id) {
+            $condArray["category_id"] = $category_id;           
+        }
+
+        $products = $dbUtil->getProducts($condArray);
+        return $this->render('search',[
+            'categories' => $categories,
+            'products' => $products
+        ]);
     }
 
     /**

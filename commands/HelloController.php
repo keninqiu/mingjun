@@ -8,6 +8,7 @@
 namespace app\commands;
 
 use yii\console\Controller;
+use app\services\DatabaseUtil;
 
 /**
  * This command echoes the first argument that you have entered.
@@ -25,6 +26,7 @@ class HelloController extends Controller
      */
     public function actionIndex($message = 'hello world')
     {
-        echo $message . "\n";
+        $dbUtil = new DatabaseUtil();
+        $dbUtil->importFromSct();
     }
 }

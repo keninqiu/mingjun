@@ -28,10 +28,7 @@ $this->title = 'My Yii Application';
                         <?php 
                         foreach($category["children"] as $child) {
                         ?>
-                        <li class="nav-item">
-                            <a class="nav-link py-0" href="/site/search?category_id=<?=$child["id"]?>"><?=$child["name"]?>
-                            </a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link py-0" href="/site/search?category_id=<?=$child["id"]?>"><?=$child["name"]?></a></li>
                         <?php
                         }
                         ?>
@@ -90,32 +87,34 @@ $this->title = 'My Yii Application';
 
     <div class="col-md-9">
 
-          <div class="row">
+          
+            <?php 
+            $i = 0;
+            foreach($products as $product) { 
+                if($i%3 == 0) {
+            ?>
+          <div class="row card-set">  
+            <?php
+                }
+            ?>
             <div class="col-md-4 card">
-              <img class="card-img-top" src="..." alt="Card image cap">
+              <img class="card-img-top" src="<?=$product["image"]?>" alt="Card image cap">
               <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h4 class="card-title"><?=$product["name"]?></h4>
+                <p class="card-text"><?=$product["description"]?></p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
-            <div class="col-md-4 card">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
+            <?php 
+                if($i%3 == 2) {
+            ?>
+            </div>    
+            <?php    
+                }            
+                $i ++;
+            } 
+            ?>
+          
 
     </div>
 
