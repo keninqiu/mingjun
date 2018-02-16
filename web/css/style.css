@@ -62,3 +62,17 @@ ul.nav-left li a:hover {
     padding: 30px;
     border-bottom:1px solid #c6c9ce;
 }
+
+h5 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.8em;
+    color: #333;
+}
+.download-div {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+#specifications,#features,#detail {
+    padding-top: 10px;
+}

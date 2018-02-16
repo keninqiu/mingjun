@@ -87,6 +87,17 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionProduct() {
+        $dbUtil = new DatabaseUtil();
+        $request = Yii::$app->request;
+        $product_id = $request->get('id');   
+        $details = $dbUtil->getProductDetails($product_id);    
+
+        return $this->render('product',[
+            'details' => $details
+        ]);      
+    }
+
     /**
      * Login action.
      *

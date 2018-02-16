@@ -102,7 +102,8 @@ $this->title = 'My Yii Application';
               <div class="card-block">
                 <h4 class="card-title"><?=$product["name"]?></h4>
                 <p class="card-text"><?=$product["description"]?></p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                
+                <a href="/site/product?id=<?=$product["id"]?>" class="btn btn-primary">View Details</a>
               </div>
             </div>
             <?php 

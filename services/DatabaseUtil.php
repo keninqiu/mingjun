@@ -10,6 +10,15 @@ class DatabaseUtil
 {
 	private $baseUrl = "http://www.sct.com.tw";
 
+    public function getProductDetails($id) {
+
+        $product = Product::find()->where(["id" => $id])->one();
+
+        return [
+            "product" => $product
+        ];
+    }
+
     public function getProducts($condArray) {
         $productSearch = Product::find();
         if($condArray) {
@@ -45,11 +54,6 @@ class DatabaseUtil
         return $categoriesWithLayer;
     }
     public function getProductInfo($client,$secondLevelLink) {
-        /*
-        if($secondLevelLink != '/TPN008.html') {
-            return [];
-        }
-        */
         $productInfo = [];
         $link = $this->baseUrl . $secondLevelLink;
         $html_source = SHD::file_get_html($link);
@@ -64,17 +68,9 @@ class DatabaseUtil
 
         $description = $descriptionDom?$descriptionDom->text():"";
         $description = trim($description);
-        /*
-        $description = $descriptionDom->find('p',0);
-        if(!$description) {
-        	$description = $descriptionDom->find('strong',0);
-        }
-        $description = $description?$description->innertext():"";
-        $description = strip_tags($description);
-		*/
 
         $description = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '', $description);
-        echo "description here we go:$description";
+        //echo "description here we go:$description";
         $productInfo["description"] = $description;
         //echo $description."<br>";
 
@@ -95,24 +91,28 @@ class DatabaseUtil
         		$productInfo["features"][] = $feature->text();
         	}
         }
-        $tbForm = $PageContent->find('table',0);
+        $tbForm = $PageContent->find('table[class="maxtable"]',0);
         $productInfo["detail"] = [];
         if($tbForm) {
-            $trDoms = $tbForm->find('tr');
-            
-            foreach($trDoms as $trDom) {
-                $line = $trDom->find('td');
-                if($line && (count($line) >= 2)) {
-                    $field = $line[0]->text();
-                    $value = $line[1]->text();
-                    //echo "field=$field,value=$value<br>";
-                    $productInfo["detail"][] = [
-                        "field" => $field,
-                        "value" => $value
-                    ];                    
-                }
+            $tbForm = $tbForm->find('table',0);
+            if($tbForm) {
+                $trDoms = $tbForm->find('tr');
+                
+                foreach($trDoms as $trDom) {
+                    $line = $trDom->find('td');
+                    if($line && (count($line) >= 2)) {
+                        $field = trim($line[0]->text());
+                        $value = trim($line[1]->text());
+                        //echo "field=$field,value=$value<br>";
+                        $productInfo["detail"][] = [
+                            "field" => $field,
+                            "value" => $value
+                        ];                    
+                    }
 
+                }                
             }
+
         }
 
         $productInfo["image"] = "";
@@ -191,7 +191,8 @@ class DatabaseUtil
 	public function importFromSct() {
         $httpclient = new Client();
         /*
-        self::getProductInfo($httpclient,"/TTP111HDP.html");
+        $info = self::getProductInfo($httpclient,"/TTP111HDL.html");
+        echo json_encode($info);
         return;
         */
         $html_source = SHD::file_get_html($this->baseUrl);
@@ -204,6 +205,7 @@ class DatabaseUtil
                 $parent_id = 0;
                 $aLink = $li->find('a',0);
                 $firstLevel = $aLink->title;
+                /*
                 echo $firstLevel."<br>";
                 if($firstLevel == 'Power Converter / Power Center') {
                     $start = true;
@@ -212,6 +214,7 @@ class DatabaseUtil
                 if(!$start) {
                     continue;
                 }
+                */
                 $parent_id = self::saveCategory($parent_id,$firstLevel);
                 $subUl = $li->find('ul',0);
                 if($subUl) {
