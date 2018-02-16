@@ -20,12 +20,16 @@ class DatabaseUtil
     }
 
     public function getProducts($condArray) {
+
         $productSearch = Product::find();
         if($condArray) {
             if(isset($condArray["category_id"])) {
                 $productSearch = $productSearch->where(["category_id" => $condArray["category_id"]]);
             }
         }
+        if(!$condArray) {
+            $productSearch = $productSearch->limit(12);
+        }        
         $products = $productSearch->all();
         return $products;
     }

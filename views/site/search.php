@@ -100,10 +100,10 @@ $this->title = 'My Yii Application';
             <div class="col-md-4 card">
               <img class="card-img-top" src="<?=$product["image"]?>" alt="Card image cap">
               <div class="card-block">
-                <h4 class="card-title"><?=$product["name"]?></h4>
-                <p class="card-text"><?=$product["description"]?></p>
-                
-                <a href="/site/product?id=<?=$product["id"]?>" class="btn btn-primary">View Details</a>
+                <div><h4 class="card-title"><?=$product["name"]?></h4></div>
+                <div class="card-text"><?=$product["description"]?></div>
+
+                <div class="card-footer"><a href="/site/product?id=<?=$product["id"]?>" class="btn btn-primary">View Details</a></div>
               </div>
             </div>
             <?php 

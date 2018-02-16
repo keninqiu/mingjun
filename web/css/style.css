@@ -76,3 +76,7 @@ h5 {
 #specifications,#features,#detail {
     padding-top: 10px;
 }
+.card-block {
+  display: table;
+  width: 100%;
+}

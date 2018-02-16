@@ -62,11 +62,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        /*
         $dbUtil = new DatabaseUtil();
         $categories = $dbUtil->getCategories();
         return $this->render('index',[
             'categories' => $categories
         ]);
+        */
+        return self::actionSearch();
     }
 
     public function actionSearch() {
