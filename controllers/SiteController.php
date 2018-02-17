@@ -77,17 +77,22 @@ class SiteController extends Controller
         $categories = $dbUtil->getCategories();
         $request = Yii::$app->request;
         $category_id = $request->get('category_id');
+        $text = $request->get('text');
 
         $condArray = [];
         if($category_id) {
             $condArray["category_id"] = $category_id;           
         }
-
+        if($text) {
+            $condArray["text"] = $text;     
+        }
         $products = $dbUtil->getProducts($condArray);
+        
         return $this->render('search',[
             'categories' => $categories,
             'products' => $products
         ]);
+        
     }
 
     public function actionProduct() {

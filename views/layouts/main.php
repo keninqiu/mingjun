@@ -67,13 +67,14 @@ AppAsset::register($this);
     </div>
 </div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+    <div class="company-footer">
+        <p class="footer-text">16F A, Gold Common Plaza No.75, Mid. Fuxin Rd.</p>
+
+        <p class="footer-text">Fuzhou Fujian China 350011 Tel: (86 591) 3926833 Fax: (86 591) 3926733</p>
+
+        <p class="footer-text">Email Address: info@foresight-cctv.com</p>
     </div>
-</footer>
 
 <?php $this->endBody() ?>
 </body>

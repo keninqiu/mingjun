@@ -80,3 +80,20 @@ h5 {
   display: table;
   width: 100%;
 }
+.company-footer {
+    background-color: #036eb8;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;    
+}
+.footer-text {
+    text-align: center;
+    color: #ffffff;
+}
+.card-block {
+    vertical-align: middle;
+}
+
+.card-set {
+    text-align: center;
+}

@@ -24,7 +24,15 @@ class DatabaseUtil
         $productSearch = Product::find();
         if($condArray) {
             if(isset($condArray["category_id"])) {
-                $productSearch = $productSearch->where(["category_id" => $condArray["category_id"]]);
+                $productSearch = $productSearch->andWhere(["category_id" => $condArray["category_id"]]);
+            }
+            if(isset($condArray["text"])) {
+                $text = $condArray["text"];
+                $productSearch = $productSearch->andWhere(
+                    ['or', ['like', 'name', $text], ['like', 'description', $text], ['like', 'specifications', $text], ['like', 'detail', $text]]);
+            }
+            if(isset($condArray["text"])) {
+
             }
         }
         if(!$condArray) {

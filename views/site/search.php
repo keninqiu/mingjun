@@ -2,12 +2,19 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'CCTV';
 ?>
 
 <div class="row">
     <div class="col-md-3"  id="sidebar">
-        <input type="text" class="form-control" placeholder="Search..." id="search">
+        <form action="/site/search">
+            <div class="input-group">
+               <input type="text" class="form-control"  name="text" placeholder="" id="search">
+               <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Search</button>
+               </span>
+            </div>
+        </form>
         <nav>
             <ul class="nav flex-column flex-nowrap">
                 <?php 
@@ -40,46 +47,6 @@ $this->title = 'My Yii Application';
                 }
                 ?>
 
-                <!--
-                <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Reports</a>
-                    <div class="collapse" id="submenu1" aria-expanded="false">
-                        <ul class="flex-column pl-2 nav">
-                            <li class="nav-item"><a class="nav-link py-0" href="">Orders</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link collapsed py-1" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1">Customers</a>
-                                <div class="collapse" id="submenu1sub1" aria-expanded="false">
-                                    <ul class="flex-column nav pl-4">
-                                        <li class="nav-item">
-                                            <a class="nav-link p-1" href="">
-                                                <i class="fa fa-fw fa-clock-o"></i> Daily
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-1" href="">
-                                                <i class="fa fa-fw fa-dashboard"></i> Dashboard
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-1" href="">
-                                                <i class="fa fa-fw fa-bar-chart"></i> Charts
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-1" href="">
-                                                <i class="fa fa-fw fa-compass"></i> Areas
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="#">Analytics</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Export</a></li>
-                -->
             </ul>
         </nav>
     </div>
@@ -98,12 +65,14 @@ $this->title = 'My Yii Application';
                 }
             ?>
             <div class="col-md-4 card">
-              <img class="card-img-top" src="<?=$product["image"]?>" alt="Card image cap">
+                <a href="/site/product?id=<?=$product["id"]?>">
+                    <img class="card-img-top" src="<?=$product["image"]?>" alt="Card image cap">
+                </a>
               <div class="card-block">
-                <div><h4 class="card-title"><?=$product["name"]?></h4></div>
+                <div><h4 class="card-title"><a href="/site/product?id=<?=$product["id"]?>"><?=$product["name"]?></a></h4></div>
                 <div class="card-text"><?=$product["description"]?></div>
 
-                <div class="card-footer"><a href="/site/product?id=<?=$product["id"]?>" class="btn btn-primary">View Details</a></div>
+                <div class="card-footer"></div>
               </div>
             </div>
             <?php 
