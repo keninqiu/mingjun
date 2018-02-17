@@ -65,7 +65,7 @@ $this->title = 'CCTV';
                 }
             ?>
             <div class="col-md-4 card">
-                <a href="/site/product?id=<?=$product["id"]?>" download>
+                <a href="/site/product?id=<?=$product["id"]?>">
                     <img class="card-img-top" src="<?=$product["image"]?>" alt="Card image cap">
                 </a>
               <div class="card-block">

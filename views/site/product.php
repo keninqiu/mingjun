@@ -11,7 +11,7 @@
     	</div>  
 
     	<div class="download-div">
-			<a class="btn btn-primary" href="<?php echo $details["product"]["document"]?>">
+			<a class="btn btn-primary" href="<?php echo $details["product"]["document"]?>" download>
 			   Download
 			</a>
     	</div> 
