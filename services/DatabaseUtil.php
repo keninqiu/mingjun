@@ -134,7 +134,7 @@ class DatabaseUtil
             $image = $imgProductDetail->find('img',0)->src;
             //echo "image=$image<br>";
 
-            $imageFile=Yii::$app->basePath."/web/assets/products/image/$image";
+            $imageFile=Yii::$app->basePath."/web/products/image/$image";
             if(!file_exists($imageFile)) {
                 $response = $client->createRequest()
                     ->setMethod('GET')
@@ -145,7 +145,7 @@ class DatabaseUtil
                 fclose($fp);            
             }
            
-            $productInfo["image"] = "/assets/products/image".$image;
+            $productInfo["image"] = "/products/image".$image;
         }
 
 
@@ -155,7 +155,7 @@ class DatabaseUtil
         $productInfo["document"] = "";
         if($document) {
 
-            $pdfFile=Yii::$app->basePath."/web/assets/products/pdf/$name.pdf";
+            $pdfFile=Yii::$app->basePath."/web/products/pdf/$name.pdf";
 
             if(!file_exists($pdfFile)) {
                 $response = $client->createRequest()
@@ -166,7 +166,7 @@ class DatabaseUtil
 	            fwrite($fp, $response->content);
 	            fclose($fp); 
 	        }
-            $productInfo["document"] = "/assets/products/pdf/$name.pdf";            
+            $productInfo["document"] = "/products/pdf/$name.pdf";            
         }
 
         return $productInfo;
