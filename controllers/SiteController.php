@@ -96,6 +96,7 @@ class SiteController extends Controller
     }
 
     public function actionProduct() {
+        
         $dbUtil = new DatabaseUtil();
         $request = Yii::$app->request;
         $product_id = $request->get('id');   

@@ -1,3 +1,24 @@
+<?php
+use yii\widgets\Breadcrumbs;
+$customLink = [];
+
+if(isset($details["parent_category"])) {
+	$customLink[] = ['label' => $details["parent_category"]["name"], 'url' => 'search?category_id='.$details["parent_category"]["id"]];	
+}
+
+$customLink[] = ['label' => $details["category"]["name"], 'url' => 'search?category_id='.$details["category"]["id"]];
+?>
+<div class="row">
+<?php
+echo Breadcrumbs::widget([
+      'homeLink' => [ 
+      		'label' => Yii::t('yii', 'Home'),
+            'url' => Yii::$app->homeUrl,
+      ],
+      'links' => $customLink,
+   ]) 
+?>
+</div>
 <div class="row">
     <div class="col-md-4">
     	<img class="img-responsive" src="<?php echo $details["product"]["image"]?>" alt="product image">

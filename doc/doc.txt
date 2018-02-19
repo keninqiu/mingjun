@@ -7,4 +7,7 @@ https://github.com/keltstr/yii2-simplehtmldom
 http://simplehtmldom.sourceforge.net/
 
 
+category_id:500
+product_id:1411
+
 

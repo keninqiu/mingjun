@@ -13,10 +13,17 @@ class DatabaseUtil
     public function getProductDetails($id) {
 
         $product = Product::find()->where(["id" => $id])->one();
-
-        return [
-            "product" => $product
+        $category_id = $product["category_id"];
+        $category = Category::find()->where(["id" => $category_id])->one();
+        $ret = [
+            "product" => $product,
+            "category" => $category,
         ];
+        if($category["parent_id"]) {
+            $parent_category = Category::find()->where(["id" => $category["parent_id"]])->one();
+            $ret["parent_category"] = $parent_category;
+        }
+        return $ret;
     }
 
     public function getProducts($condArray) {
@@ -24,7 +31,21 @@ class DatabaseUtil
         $productSearch = Product::find();
         if($condArray) {
             if(isset($condArray["category_id"])) {
-                $productSearch = $productSearch->andWhere(["category_id" => $condArray["category_id"]]);
+                $category_id = $condArray["category_id"];
+                $category = Category::find()->where(["id" => $category_id])->one();
+                if(!$category["parent_id"]) {
+                    
+                    $products = Product::find()->where(["category_id" => $category["id"]])->all();;
+
+                    $categories = Category::find()->where(["parent_id" => $category_id])->all();
+                    foreach($categories as $item) {
+                        $condArray = ["category_id" => $item["id"]];
+                        $subset = self::getProducts($condArray);
+                        $products = array_merge($products,$subset);
+                    }
+                    return $products;
+                }
+                $productSearch = $productSearch->andWhere(["category_id" => $category_id]);
             }
             if(isset($condArray["text"])) {
                 $text = $condArray["text"];
@@ -227,6 +248,12 @@ class DatabaseUtil
                     continue;
                 }
                 */
+                /*
+                if(!in_array($firstLevel,['Surge Protector'])) {
+                    continue;
+                }
+                echo "there we go\n";
+                */
                 $parent_id = self::saveCategory($parent_id,$firstLevel);
                 $subUl = $li->find('ul',0);
                 if($subUl) {
@@ -253,7 +280,7 @@ class DatabaseUtil
                         }
                         else {
                             $secondLevelLink = $aLink->href;
-                            echo "&nbsp;&nbsp;&nbsp;&nbsp;$secondLevel&nbsp;&nbsp;&nbsp;&nbsp;$secondLevelLink<br>";
+                            echo "$secondLevel$secondLevelLink\n";
                             $productInfo = self::getProductInfo($httpclient,$secondLevelLink);
                             //echo json_encode($productInfo)."<br>";
                             self::saveProduct($parent_id,$secondLevel,$secondLevelLink,$productInfo);

@@ -22,7 +22,7 @@ $this->title = 'CCTV';
                     if(!$category["children"]) {
                 ?>
 
-                <li class="nav-item"><a class="nav-link" href="#"><?=$category["name"]?></a></li>
+                <li class="nav-item"><a class="nav-link" href="/site/search?category_id=<?=$category["id"]?>"><?=$category["name"]?></a></li>
 
                 <?php 
                     }
