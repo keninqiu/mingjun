@@ -189,7 +189,9 @@ class DatabaseUtil
 
         $productInfo["image"] = "";
         $imgProductDetail = $PageContent->find('div[class="imgProductDetail"]',0);
-
+        if(!$imgProductDetail) {
+            $imgProductDetail = $PageContent->find('a',0);
+        }
         if($imgProductDetail) {
             $image = $imgProductDetail->find('img',0)->src;
             //echo "image=$image<br>";
@@ -247,26 +249,63 @@ class DatabaseUtil
         return $category["id"];
     }
 
+    public function reloadProductFromSct($id) {
+        $client = new Client();
+        $product = Product::find()->where(["id" => $id])->one();
+        if(!$product) {
+            return;
+        }
+        $productLink = $product["link"];
+        $productInfo = self::getProductInfo($client,$productLink);
+        //echo json_encode($productInfo)."\n";
+        self::saveProduct($product["category_id"],$product["name"],$product["link"],$productInfo);            
+    }
+
     public function saveProduct($category_id,$productName,$productLink,$productInfo) {
+
         $product = Product::find()->where(["name" => $productName])->one();
         if($product) {
-            return;
+            $productId = $product["id"];
+            $categoryId = $product["category_id"];
+            //echo "product existed with id:$productId,category_id=$category_id,categoryId=$categoryId,return\n";
+            if(!$categoryId && ($category_id > 0)) {
+                $product["category_id"] = $category_id;
+            }
         }
-        if(!$productInfo) {
-            return;
+        else {
+            $product = new Product();
+            $product["category_id"] = $category_id;  
+            $product["name"] = $productName;
+            $product["link"] = $productLink;                      
         }
-        $product = new Product();
 
-        $product["category_id"] = $category_id;
-        $product["name"] = $productName;
-        $product["link"] = $productLink;
-        $product["description"] = $productInfo["description"];
-        $product["specifications"] = json_encode($productInfo["specifications"]);
-        $product["detail"] = json_encode($productInfo["detail"]);
-        $product["features"] = json_encode($productInfo["features"]);
-        $product["image"] = $productInfo["image"];
-        $product["document"] = $productInfo["document"];
+        if($productInfo["description"]) {
+            $product["description"] = $productInfo["description"];
+        }
+        
+        if($productInfo["specifications"]) {
+            $product["specifications"] = json_encode($productInfo["specifications"]);
+        }
+        
+        if($productInfo["detail"]) {
+            $product["detail"] = json_encode($productInfo["detail"]);
+        }
+        
+        if($productInfo["features"]) {
+            $product["features"] = json_encode($productInfo["features"]);
+        }
+        
+        if($productInfo["image"]) {
+            $product["image"] = $productInfo["image"];
+            //echo "image is:".$product["image"]."\n";
+        }
+        
+        if($productInfo["document"]) {
+            $product["document"] = $productInfo["document"];
+        }
+        
         $product->save();
+        //echo "image 2 is:".$product["image"]."\n";
     }
 
     public function parseCategoryLink($client,$category_id,$category_link) {
@@ -304,7 +343,7 @@ class DatabaseUtil
                 $firstLevel = $aLink->title;
 
                 
-                if(!in_array($firstLevel,['HD-TVI / AHD / HDCVI / CVBS Transmission'])) {
+                if(!in_array($firstLevel,['Composite Video / Component VideoTransmission'])) {
                     continue;
                 }
                 echo "there we go\n";
@@ -320,10 +359,13 @@ class DatabaseUtil
                         $subSubUl = $subLi->find('ul',0);
                         if($subSubUl) {
                             echo $secondLevel."\n";
+                            /*
                             if(!in_array($secondLevel,['Analog Video CCTV Twisted Pair Transmission'])) {
                                 continue;
                             }
+                            */
                             $second_id = self::saveCategory($parent_id,$secondLevel);
+                            echo "second_id=$second_id\n";
                             $subSubLis = $subSubUl->children();
                             foreach($subSubLis as $subSubLi) {
                                 $aLink = $subSubLi->find('a',0);
@@ -369,10 +411,11 @@ class DatabaseUtil
                                     
                                     $productName = $aLink->title;
                                     $productLink = $aLink->href;
-                                    echo "$productName;$productLink\n";
+                                    echo "productName=$productName;productLink=$productLink\n";
                                     $productInfo = self::getProductInfo($httpclient,$productLink);
-                                    //echo json_encode($productInfo)."<br>";
-                                    self::saveProduct($second_id,$productName,$productLink,$productInfo);                                    
+                                    //echo "productInfo=".json_encode($productInfo)."\n";
+                                    self::saveProduct($second_id,$productName,$productLink,$productInfo);
+                                                                     
                                 }
 
                             }                            

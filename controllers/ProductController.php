@@ -8,6 +8,7 @@ use app\models\ProductSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\services\DatabaseUtil;
 
 /**
  * ProductController implements the CRUD actions for Product model.
@@ -58,6 +59,15 @@ class ProductController extends Controller
         ]);
     }
 
+    public function actionReload($id) {
+        $dbUtil = new DatabaseUtil();
+        $dbUtil->reloadProductFromSct($id);    
+            
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+        ]);   
+             
+    }
     /**
      * Creates a new Product model.
      * If creation is successful, the browser will be redirected to the 'view' page.
