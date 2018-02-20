@@ -32,20 +32,58 @@ class DatabaseUtil
         if($condArray) {
             if(isset($condArray["category_id"])) {
                 $category_id = $condArray["category_id"];
+                $sub_categories = Category::find()->where(["parent_id" => $category_id])->all();
+                if($sub_categories) {
+                    $products = [];
+                    foreach($sub_categories as $subitem) {
+                        $sub_category_id = $subitem["id"];
+                        $condArray["category_id"] = $sub_category_id;
+                        $products = array_merge($products,self::getProducts($condArray));
+                    }
+                    return $products;
+                }
+                else {
+                    $productSearch = $productSearch->andWhere(["category_id" => $category_id]);
+                }
+                /*
+                $category_id = $condArray["category_id"];
                 $category = Category::find()->where(["id" => $category_id])->one();
                 if(!$category["parent_id"]) {
                     
                     $products = Product::find()->where(["category_id" => $category["id"]])->all();;
 
                     $categories = Category::find()->where(["parent_id" => $category_id])->all();
-                    foreach($categories as $item) {
-                        $condArray = ["category_id" => $item["id"]];
-                        $subset = self::getProducts($condArray);
-                        $products = array_merge($products,$subset);
+                    if($categories) {
+                        foreach($categories as $item) {
+                            $sub_category_id = $item["id"];
+                            $subcategories = Category::find()->where(["parent_id" => $sub_category_id])->all();
+                            if($subcategories) {
+                                foreach($subcategories as $subitem) {
+                                    $sub_sub_category_id = $subitem["id"];
+                                    $subsubcategories = Category::find()->where(["parent_id" => $sub_sub_category_id])->all();
+                                    if($subsubcategories) {
+                                        foreach($subsubcategories as $subsubitem) {
+                                            $sub_sub_sub_category_id = $subsubitem["id"];
+                                        }
+                                    }
+                                    else {
+
+                                    }
+                                }
+                            }
+                            else {
+                                $condArray = ["category_id" => $sub_category_id];
+                                $subset = self::getProducts($condArray);
+                                $products = array_merge($products,$subset);                                
+                            }
+
+                        }                        
                     }
+
                     return $products;
                 }
                 $productSearch = $productSearch->andWhere(["category_id" => $category_id]);
+                */
             }
             if(isset($condArray["text"])) {
                 $text = $condArray["text"];
@@ -60,6 +98,7 @@ class DatabaseUtil
             $productSearch = $productSearch->limit(12);
         }        
         $products = $productSearch->all();
+        
         return $products;
     }
 
@@ -194,6 +233,11 @@ class DatabaseUtil
     }
 
     public function saveCategory($parent_id,$name) {
+        $category = Category::find()->where(["name" => $name])->one();
+        if($category) {
+            return $category["id"];
+        }
+
         $category = new Category();
         if($parent_id > 0) {
             $category["parent_id"] = $parent_id;
@@ -204,6 +248,10 @@ class DatabaseUtil
     }
 
     public function saveProduct($category_id,$productName,$productLink,$productInfo) {
+        $product = Product::find()->where(["name" => $productName])->one();
+        if($product) {
+            return;
+        }
         if(!$productInfo) {
             return;
         }
@@ -219,6 +267,22 @@ class DatabaseUtil
         $product["image"] = $productInfo["image"];
         $product["document"] = $productInfo["document"];
         $product->save();
+    }
+
+    public function parseCategoryLink($client,$category_id,$category_link) {
+        $link = $this->baseUrl . $category_link;
+        $html_source = SHD::file_get_html($link);
+        $boxProductBlk = $html_source->find('div[class="boxProductBlk"]');
+        foreach($boxProductBlk as $boxProduct) {
+            $productDom = $boxProduct->find('a',1);
+            if($productDom) {
+                $productLink = $productDom->href;
+                $productName = $productDom->text();
+                $productInfo = self::getProductInfo($client,$productLink);
+                self::saveProduct($category_id,$productName,$productLink,$productInfo);                
+            }
+
+        }
     }
 
 	public function importFromSct() {
@@ -238,22 +302,13 @@ class DatabaseUtil
                 $parent_id = 0;
                 $aLink = $li->find('a',0);
                 $firstLevel = $aLink->title;
-                /*
-                echo $firstLevel."<br>";
-                if($firstLevel == 'Power Converter / Power Center') {
-                    $start = true;
-                    continue;
-                }
-                if(!$start) {
-                    continue;
-                }
-                */
-                /*
-                if(!in_array($firstLevel,['Surge Protector'])) {
+
+                
+                if(!in_array($firstLevel,['HD-TVI / AHD / HDCVI / CVBS Transmission'])) {
                     continue;
                 }
                 echo "there we go\n";
-                */
+                
                 $parent_id = self::saveCategory($parent_id,$firstLevel);
                 $subUl = $li->find('ul',0);
                 if($subUl) {
@@ -264,17 +319,61 @@ class DatabaseUtil
                         
                         $subSubUl = $subLi->find('ul',0);
                         if($subSubUl) {
-                            echo "&nbsp;&nbsp;&nbsp;&nbsp;".$secondLevel."<br>";
+                            echo $secondLevel."\n";
+                            if(!in_array($secondLevel,['Analog Video CCTV Twisted Pair Transmission'])) {
+                                continue;
+                            }
                             $second_id = self::saveCategory($parent_id,$secondLevel);
                             $subSubLis = $subSubUl->children();
                             foreach($subSubLis as $subSubLi) {
                                 $aLink = $subSubLi->find('a',0);
-                                $productName = $aLink->title;
-                                $productLink = $aLink->href;
-                                echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$productName&nbsp;&nbsp;&nbsp;&nbsp;$productLink<br>";
-                                $productInfo = self::getProductInfo($httpclient,$productLink);
-                                //echo json_encode($productInfo)."<br>";
-                                self::saveProduct($second_id,$productName,$productLink,$productInfo);
+                                $threeLevel = $aLink->title;
+                                $subSubSubUl = $subSubLi->find('ul',0);
+                                if($subSubSubUl) {
+                                    echo "threeLevel=$threeLevel\n";
+                                    $three_id = self::saveCategory($second_id,$threeLevel);
+                                    $subSubSubLis = $subSubSubUl->children();
+                                    foreach($subSubSubLis as $subSubSubLi) {
+                                        $aLink = $subSubSubLi->find('a',0);
+                                        $fourLevel = $aLink->title;
+                                        $subSubSubSubUl = $subSubSubLi->find('ul',0);
+                                        if($subSubSubSubUl) {
+                                            echo "fourLevel=$fourLevel\n";
+                                            $four_id = self::saveCategory($three_id,$fourLevel);
+                                            $subSubSubSubLis = $subSubSubSubUl->children();
+                                            foreach($subSubSubSubLis as $subSubSubSubLi) {
+                                                $aLink = $subSubSubSubLi->find('a',0);
+                                                $categoryLink = $aLink->href;
+                                                $fiveLevel = $aLink->title;
+                                                $subSubSubSubSubUl = $subSubSubSubLi->find('ul',0);
+                                                if($subSubSubSubSubUl) {
+                                                    echo "fiveLevel=$fiveLevel\n";
+                                                    $five_id = self::saveCategory($four_id,$fiveLevel);
+                                                    self::parseCategoryLink($httpclient,$five_id,$categoryLink);
+                                                }
+                                                else {
+                                                    $productName = $aLink->title;
+                                                    $productLink = $aLink->href;
+                                                    echo "$productName;$productLink\n";
+                                                    $productInfo = self::getProductInfo($httpclient,$productLink);
+                                                    //echo json_encode($productInfo)."<br>";
+                                                    self::saveProduct($four_id,$productName,$productLink,$productInfo);
+                                                }
+
+                                                                                                
+                                            }
+                                        }                                        
+                                    }
+                                }
+                                else {
+                                    
+                                    $productName = $aLink->title;
+                                    $productLink = $aLink->href;
+                                    echo "$productName;$productLink\n";
+                                    $productInfo = self::getProductInfo($httpclient,$productLink);
+                                    //echo json_encode($productInfo)."<br>";
+                                    self::saveProduct($second_id,$productName,$productLink,$productInfo);                                    
+                                }
 
                             }                            
                         }

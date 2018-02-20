@@ -114,9 +114,9 @@ CREATE TABLE `product` (
   `name` varchar(50) NOT NULL,
   `link` varchar(200) NOT NULL,
   `description` varchar(5000) DEFAULT NULL,
-  `specifications` varchar(10000) DEFAULT NULL,
-  `detail` varchar(10000) DEFAULT NULL,
-  `features` varchar(10000) DEFAULT NULL,
+  `specifications` json DEFAULT NULL,
+  `detail` json DEFAULT NULL,
+  `features` json DEFAULT NULL,
   `image` varchar(200) DEFAULT NULL,
   `document` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
