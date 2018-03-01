@@ -19,5 +19,7 @@ CREATE TABLE product (
      PRIMARY KEY (id)
 );
 
+ALTER TABLE product ADD CONSTRAINT product_name UNIQUE (name);
+
 delete from category;
 delete from product;

@@ -3,10 +3,10 @@ use yii\widgets\Breadcrumbs;
 $customLink = [];
 
 if(isset($details["parent_category"])) {
-	$customLink[] = ['label' => $details["parent_category"]["name"], 'url' => 'search?category_id='.$details["parent_category"]["id"]];	
+	$customLink[] = ['label' => $details["parent_category"]["name"], 'url' => '/site/search?category_id='.$details["parent_category"]["id"]];	
 }
 
-$customLink[] = ['label' => $details["category"]["name"], 'url' => 'search?category_id='.$details["category"]["id"]];
+$customLink[] = ['label' => $details["category"]["name"], 'url' => '/site/search?category_id='.$details["category"]["id"]];
 ?>
 <div class="row">
 <?php

@@ -65,11 +65,11 @@ $this->title = 'CCTV';
                 }
             ?>
             <div class="col-md-4 card">
-                <a href="/site/product?id=<?=$product["id"]?>">
+                <a href="/<?=$product["name"]?>.html">
                     <img class="card-img-top" src="<?=$product["image"]?>" alt="Card image cap">
                 </a>
               <div class="card-block">
-                <div><h4 class="card-title"><a href="/site/product?id=<?=$product["id"]?>"><?=$product["name"]?></a></h4></div>
+                <div><h4 class="card-title"><a href="/<?=$product["name"]?>.html"><?=$product["name"]?></a></h4></div>
                 <div class="card-text"><?=$product["description"]?></div>
 
                 <div class="card-footer"></div>

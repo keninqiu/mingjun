@@ -10,9 +10,9 @@ class DatabaseUtil
 {
 	private $baseUrl = "http://www.sct.com.tw";
 
-    public function getProductDetails($id) {
+    public function getProductDetails($name) {
 
-        $product = Product::find()->where(["id" => $id])->one();
+        $product = Product::find()->where(["name" => $name])->one();
         $category_id = $product["category_id"];
         $category = Category::find()->where(["id" => $category_id])->one();
         $ret = [

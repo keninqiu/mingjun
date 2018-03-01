@@ -99,8 +99,8 @@ class SiteController extends Controller
         
         $dbUtil = new DatabaseUtil();
         $request = Yii::$app->request;
-        $product_id = $request->get('id');   
-        $details = $dbUtil->getProductDetails($product_id);    
+        $product_name = $request->get('name');   
+        $details = $dbUtil->getProductDetails($product_name);    
 
         return $this->render('product',[
             'details' => $details
