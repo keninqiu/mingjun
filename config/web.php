@@ -23,7 +23,7 @@ $config = [
             // Use pretty URLs
             'enablePrettyUrl' => true,
             'rules' => [
-                '<name:\w+>.html' => 'site/product',
+                '<name:(\w|-)+>.html' => 'site/product',
                 'index.html' => '/site/index'
             ],
         ],        
