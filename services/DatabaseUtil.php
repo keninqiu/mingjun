@@ -26,7 +26,7 @@ class DatabaseUtil
         return $ret;
     }
 
-    public function getProducts($condArray) {
+    public function getProducts($condArray=[]) {
 
         $productSearch = Product::find();
         if($condArray) {
@@ -129,6 +129,13 @@ class DatabaseUtil
         $productInfo = [];
         $link = $this->baseUrl . $secondLevelLink;
         $html_source = SHD::file_get_html($link);
+        $titleDom = $html_source->find('title',0);
+        $title = $titleDom?$titleDom->text():"";
+        $title = str_replace("Smart Cabling & Transmission Corp.","FORESIGHT CCTV Inc.",$title);
+        $productInfo["title"] = $title;
+
+
+
         $PageContent = $html_source->find('div[class="PageContent"]',0);
         //echo $PageContent;
         if(!$PageContent) {
@@ -136,6 +143,14 @@ class DatabaseUtil
         }
         $nameDom = $PageContent->find('h4',0);
         $name = $nameDom->text();
+
+        $meta_keywordsDom = $html_source->find('meta[name="keywords"]',0);
+        $meta_keywords = $meta_keywordsDom?$meta_keywordsDom->content:"";
+        $productInfo["meta_keywords"] = $meta_keywords;
+        //$meta_descriptionDom = $html_source->find('meta[name="description"]',0);
+        //$meta_description = $meta_descriptionDom?$meta_descriptionDom->content:"";    
+        $productInfo["meta_description"] = "The $name is offered by FORESIGHT CCTV Inc., a leader leading professional CCTV manufacturer in th field of CCTV Security Products.We design, develop and manufacture a full range of CCTV & IP Smart Cabling products on Twisted Pair Transmission, IP Cabling Transmission, CAT5 VGA Transmission, Data Transmission, Coaxial Cabling system for Video Distributor & Amplifier, Surge Protector, Solution Provider for Video Interference, Power Center, other accessories...etc.";
+
         $descriptionDom = $PageContent->find('h3',0);
 
         $description = $descriptionDom?$descriptionDom->text():"";
@@ -277,6 +292,18 @@ class DatabaseUtil
             $product["category_id"] = $category_id;  
             $product["name"] = $productName;
             $product["link"] = $productLink;                      
+        }
+
+        if($productInfo["title"]) {
+            $product["title"] = $productInfo["title"];
+        }
+
+        if($productInfo["meta_keywords"]) {
+            $product["meta_keywords"] = $productInfo["meta_keywords"];
+        }
+
+        if($productInfo["meta_description"]) {
+            $product["meta_description"] = $productInfo["meta_description"];
         }
 
         if($productInfo["description"]) {

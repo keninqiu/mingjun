@@ -9,6 +9,9 @@ use Yii;
  *
  * @property int $id
  * @property int $category_id
+ * @property string $title
+ * @property string $meta_keywords
+ * @property string $meta_description
  * @property string $name
  * @property string $link
  * @property string $description
@@ -36,7 +39,7 @@ class Product extends \yii\db\ActiveRecord
         return [
             [['category_id'], 'integer'],
             [['name'], 'required'],
-            [['specifications','features', 'detail','description'], 'string'],
+            [['specifications','features', 'detail','description','title','meta_keywords','meta_description'], 'string'],
             [['name'], 'string', 'max' => 50],
             [['link', 'image', 'document'], 'string', 'max' => 200]
         ];

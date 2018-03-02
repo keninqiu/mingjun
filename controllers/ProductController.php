@@ -46,6 +46,15 @@ class ProductController extends Controller
         ]);
     }
 
+    public function actionReloadall() {
+        $dbUtil = new DatabaseUtil();
+        $products = $dbUtil->getProducts(["all" => true]);
+        foreach($products as $product) {
+            $id = $product["id"];
+            self::actionReload($id);
+        }
+    }
+
     /**
      * Displays a single Product model.
      * @param integer $id

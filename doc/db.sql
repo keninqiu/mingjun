@@ -19,6 +19,10 @@ CREATE TABLE product (
      PRIMARY KEY (id)
 );
 
+alter table product ADD column title varchar(500);
+alter table product ADD column meta_keywords varchar(5000);
+alter table product ADD column meta_description varchar(5000);
+
 ALTER TABLE product ADD CONSTRAINT product_name UNIQUE (name);
 
 delete from category;

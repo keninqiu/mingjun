@@ -101,7 +101,7 @@ class SiteController extends Controller
         $request = Yii::$app->request;
         $product_name = $request->get('name');   
         $details = $dbUtil->getProductDetails($product_name);    
-
+        $product = $details["product"];
         return $this->render('product',[
             'details' => $details
         ]);      
