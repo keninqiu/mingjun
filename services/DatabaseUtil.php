@@ -102,6 +102,13 @@ class DatabaseUtil
         return $products;
     }
 
+    function replace_unicode_escape_sequence($match) {
+        return mb_convert_encoding(pack('H*', $match[1]), 'UTF-8', 'UCS-2BE');
+    }
+    public function unicode_decode($str) {
+        return preg_replace_callback('/\\\\u([0-9a-f]{4})/i', 'self::replace_unicode_escape_sequence', $str);
+    }
+
     public function getCategories() {
         $categories = Category::find()->all();
         $categoriesWithLayer = [];
@@ -146,6 +153,10 @@ class DatabaseUtil
 
         $meta_keywordsDom = $html_source->find('meta[name="keywords"]',0);
         $meta_keywords = $meta_keywordsDom?$meta_keywordsDom->content:"";
+
+        $meta_keywords = preg_replace('/[\x00-\x1F\x7F-\xFF\xEF\xBB\xBF]/', '', $meta_keywords);
+        $meta_keywords = self::unicode_decode($meta_keywords);
+
         $productInfo["meta_keywords"] = $meta_keywords;
         //$meta_descriptionDom = $html_source->find('meta[name="description"]',0);
         //$meta_description = $meta_descriptionDom?$meta_descriptionDom->content:"";    
@@ -157,6 +168,7 @@ class DatabaseUtil
         $description = trim($description);
 
         $description = preg_replace('/[\x00-\x1F\x7F-\xFF]/', '', $description);
+        $description = self::unicode_decode($description);
         //echo "description here we go:$description";
         $productInfo["description"] = $description;
         //echo $description."<br>";
@@ -268,11 +280,13 @@ class DatabaseUtil
         $client = new Client();
         $product = Product::find()->where(["id" => $id])->one();
         if(!$product) {
+            echo "no product,return\n";
             return;
         }
+
         $productLink = $product["link"];
         $productInfo = self::getProductInfo($client,$productLink);
-        //echo json_encode($productInfo)."\n";
+        echo json_encode($productInfo)."\n";
         self::saveProduct($product["category_id"],$product["name"],$product["link"],$productInfo);            
     }
 
@@ -282,7 +296,7 @@ class DatabaseUtil
         if($product) {
             $productId = $product["id"];
             $categoryId = $product["category_id"];
-            //echo "product existed with id:$productId,category_id=$category_id,categoryId=$categoryId,return\n";
+            //echo "product existed with id:$productId,category_id=$category_id,categoryId=$categoryId\n";
             if(!$categoryId && ($category_id > 0)) {
                 $product["category_id"] = $category_id;
             }
@@ -331,7 +345,7 @@ class DatabaseUtil
             $product["document"] = $productInfo["document"];
         }
         
-        $product->save();
+        $product->save(false);
         //echo "image 2 is:".$product["image"]."\n";
     }
 
@@ -369,12 +383,12 @@ class DatabaseUtil
                 $aLink = $li->find('a',0);
                 $firstLevel = $aLink->title;
 
-                
+                /*
                 if(!in_array($firstLevel,['Composite Video / Component VideoTransmission'])) {
                     continue;
                 }
                 echo "there we go\n";
-                
+                */
                 $parent_id = self::saveCategory($parent_id,$firstLevel);
                 $subUl = $li->find('ul',0);
                 if($subUl) {

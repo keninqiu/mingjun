@@ -1,8 +1,14 @@
 <?php
 use yii\widgets\Breadcrumbs;
 $this->title = $details["product"]["title"];
-$this->meta_keywords = $details["product"]["meta_keywords"];
-$this->meta_description = $details["product"]["meta_description"];
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => $details["product"]["meta_description"]
+]);
+$this->registerMetaTag([
+    'name' => 'keywords',
+    'content' => $details["product"]["meta_keywords"]
+]);
 $customLink = [];
 
 if(isset($details["parent_category"])) {

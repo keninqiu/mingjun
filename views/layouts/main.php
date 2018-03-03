@@ -18,8 +18,6 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="<?= $this->meta_keywords ?>">
-    <meta name="description" content="<?= $this->meta_description ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
@@ -27,7 +25,17 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
+<div id="masthead">
+  
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="500" height="27">
+      <param name="movie" value="foresightcctv.swf">
+      <param name="quality" value="high">
+      <param name="wmode" value="transparent">
+      <param name="SCALE" value="exactfit">
+      <embed src="/foresightcctv.swf" width="500" height="27" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" scale="exactfit"></embed>
+    </object>
+  </h1>
+</div>
 <div class="wrap">
     <?php
     NavBar::begin([
