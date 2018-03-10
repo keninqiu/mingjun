@@ -12,7 +12,7 @@ $this->registerMetaTag([
     'content' => "alarm,security,camera,lenses,CCTV,VIDEO,Ground Loop Isolator,Lens,Network,Network Video,Network Video Technologies,CCTV Video,CCTV Transmission,CCTV over UTP,Video Over Unshielded Twisted Pair,Video Transmission,UTP CCTV,UTP Video,Unshielded Twisted Pair Video,Video Over UTP,Video Over Unshielded,Twisted Pair,Surveillance,Surveillance Video,Surveillance CCTV,Surveillance Video Transmission,Video BALUN,CCTV BALUN,BALUN,Twisted Pair BALUN,UTP BALUN,IP Camera Cabling"
 ]);
 ?>
-
+<div class="clearfix"><br></div>
 <div class="row">
     <div class="col-md-3"  id="sidebar">
         <form action="/site/search">
