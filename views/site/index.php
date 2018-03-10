@@ -85,21 +85,17 @@ $this->title = 'CCTV';
             <div class="row">
               <table class="table">
                 <tbody>
-                  <tr>
-                    <th>
-                      IP/POE Transmission
-                    </th>
-                  </tr>
+                  <?php 
+                  foreach($products as $product) {
+                  ?>
                   <tr>
                     <td>
-                    IP01/IP02/IP03 Smart IP Camera Long Distance Transmission Cabling Solutions, over CAT5 or Coax Cable up to 1.5KM.
+                    <a href="<?="/".$product["name"].".html"?>"><?=$product["name"]." - ". $product["description"]?></a>
                     </td>
-                  </tr>
-                  <tr>
-                    <td>
-                    IP02P IP Extender with Power over Coax (PoE over Coax)
-                    </td>
-                  </tr>              
+                  </tr>  
+                  <?php 
+                  }
+                  ?>           
                 </tbody>
               </table>               
             </div>

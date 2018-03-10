@@ -90,8 +90,8 @@ class DatabaseUtil
                 $productSearch = $productSearch->andWhere(
                     ['or', ['like', 'name', $text], ['like', 'description', $text], ['like', 'specifications', $text], ['like', 'detail', $text]]);
             }
-            if(isset($condArray["text"])) {
-
+            if(isset($condArray["new"])) {
+                $productSearch = $productSearch->andWhere(["new" => $condArray["new"]]);
             }
         }
         if(!$condArray) {

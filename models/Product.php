@@ -20,6 +20,7 @@ use Yii;
  * @property string $detail
  * @property string $image
  * @property string $document
+ * @property int $new
  */
 class Product extends \yii\db\ActiveRecord
 {
@@ -37,7 +38,7 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['category_id'], 'integer'],
+            [['category_id','new'], 'integer'],
             [['name'], 'required'],
             [['specifications','features', 'detail','description','title','meta_keywords','meta_description'], 'string'],
             [['name'], 'string', 'max' => 50],
@@ -60,6 +61,7 @@ class Product extends \yii\db\ActiveRecord
             'detail' => 'Detail',
             'image' => 'Image',
             'document' => 'Document',
+            'new' => 'New',
         ];
     }
 }

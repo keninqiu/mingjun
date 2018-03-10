@@ -62,15 +62,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        /*
         $dbUtil = new DatabaseUtil();
-        $categories = $dbUtil->getCategories();
+        $condArray = [];
+        $condArray["new"] = 1;  
+        $products = $dbUtil->getProducts($condArray);
         return $this->render('index',[
-            'categories' => $categories
-        ]);
-        */
-        return $this->render('index',[
-            
+            'products' => $products
         ]);
     }
 

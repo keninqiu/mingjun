@@ -29,3 +29,5 @@ ALTER TABLE product ADD CONSTRAINT product_name UNIQUE (name);
 
 delete from category;
 delete from product;
+
+ALTER TABLE `product` ADD `new` TINYINT(2) NOT NULL DEFAULT '0' AFTER `meta_description`;
