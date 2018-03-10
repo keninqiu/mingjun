@@ -69,7 +69,9 @@ class SiteController extends Controller
             'categories' => $categories
         ]);
         */
-        return self::actionSearch();
+        return $this->render('index',[
+            
+        ]);
     }
 
     public function actionSearch() {

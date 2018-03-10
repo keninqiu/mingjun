@@ -1,128 +1,52 @@
 <?php
 
 /* @var $this yii\web\View */
-
+use yii\helpers\Html;
 $this->title = 'CCTV';
 ?>
 
-<div class="row">
-    <div class="col-md-3"  id="sidebar">
-        <input type="text" class="form-control" placeholder="Search..." id="search">
-        <nav>
-            <ul class="nav flex-column flex-nowrap">
-                <?php 
-                foreach($categories as $category) {
-                    if(!$category["children"]) {
-                ?>
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
+  </ol>
 
-                <li class="nav-item"><a class="nav-link" href="#"><?=$category["name"]?></a></li>
-
-                <?php 
-                    }
-                    else {
-                ?>
-                <li class="nav-item">
-                <a class="nav-link collapsed" href="#submenu<?=$category["id"]?>" data-toggle="collapse" data-target="#submenu<?=$category["id"]?>"><?=$category["name"]?></a>
-                <div class="collapse" id="submenu<?=$category["id"]?>" aria-expanded="false">
-                    <ul class="flex-column pl-2 nav">
-                        <?php 
-                        foreach($category["children"] as $child) {
-                        ?>
-                        <li class="nav-item">
-                            <a class="nav-link py-0" href="/site/search?category_id=<?=$child["id"]?>"><?=$child["name"]?>
-                            </a>
-                        </li>
-                        <?php
-                        }
-                        ?>
-                    </ul>
-                </div>
-                </li>
-                <?php         
-                    }
-                }
-                ?>
-
-                <!--
-                <li class="nav-item"><a class="nav-link" href="#">Overview</a></li>
-                <li class="nav-item">
-                    <a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Reports</a>
-                    <div class="collapse" id="submenu1" aria-expanded="false">
-                        <ul class="flex-column pl-2 nav">
-                            <li class="nav-item"><a class="nav-link py-0" href="">Orders</a></li>
-                            <li class="nav-item">
-                                <a class="nav-link collapsed py-1" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1">Customers</a>
-                                <div class="collapse" id="submenu1sub1" aria-expanded="false">
-                                    <ul class="flex-column nav pl-4">
-                                        <li class="nav-item">
-                                            <a class="nav-link p-1" href="">
-                                                <i class="fa fa-fw fa-clock-o"></i> Daily
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-1" href="">
-                                                <i class="fa fa-fw fa-dashboard"></i> Dashboard
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-1" href="">
-                                                <i class="fa fa-fw fa-bar-chart"></i> Charts
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link p-1" href="">
-                                                <i class="fa fa-fw fa-compass"></i> Areas
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="#">Analytics</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Export</a></li>
-                -->
-            </ul>
-        </nav>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item">
+      <img src="/common/adv_1_en.png" alt="adv_1">
+      <div class="carousel-caption">
+        
+      </div>
+    </div>
+    <div class="item">
+      <img src="/common/adv_2_en.png" alt="adv_2">
+      <div class="carousel-caption">
+        
+      </div>
     </div>
 
+    <div class="item active">
+      <img src="/common/adv_3_en.png" alt="adv_2">
+      <div class="carousel-caption">
+        
+      </div>
+    </div>    
+  </div>
 
-    <div class="col-md-9">
-
-          <div class="row">
-            <div class="col-md-4 card">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-            <div class="col-md-4 card">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <img class="card-img-top" src="..." alt="Card image cap">
-              <div class="card-block">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-
-    </div>
-
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 
-
-
-
-    </div>
+<div class="row">
+    
 </div>
