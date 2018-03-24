@@ -60,19 +60,23 @@ class SiteController extends Controller
      *
      * @return string
      */
+
     public function actionIndex()
     {
         $dbUtil = new DatabaseUtil();
         $condArray = [];
         $condArray["new"] = 1;  
         $products = $dbUtil->getProducts($condArray);
+        $settingArray = $dbUtil->getSettings();
         return $this->render('index',[
-            'products' => $products
+            'products' => $products,
+            'settings' => $settingArray
         ]);
     }
 
     public function actionSearch() {
         $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();
         $categories = $dbUtil->getCategories();
         $request = Yii::$app->request;
         $category_id = $request->get('category_id');
@@ -89,21 +93,33 @@ class SiteController extends Controller
         
         return $this->render('search',[
             'categories' => $categories,
-            'products' => $products
+            'products' => $products,
+            'settings' => $settingArray
         ]);
         
     }
 
     public function actionProduct() {
-        
         $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();
         $request = Yii::$app->request;
         $product_name = $request->get('name');   
-        $details = $dbUtil->getProductDetails($product_name);    
+        $details = $dbUtil->getProductDetails($product_name);   
+        $similar_products = $dbUtil->getSimilar($product_name);
         $product = $details["product"];
         return $this->render('product',[
-            'details' => $details
+            'details' => $details,
+            'similar_products' => $similar_products,
+            'settings' => $settingArray
         ]);      
+    }
+
+    public function actionNews() {
+        $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();
+        return $this->render('news',[
+            'settings' => $settingArray
+        ]); 
     }
 
     /**
@@ -113,6 +129,8 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
+        $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();        
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -125,7 +143,8 @@ class SiteController extends Controller
         
         else {
             return $this->render('login', [
-            'model' => $model,
+                'model' => $model,
+                'settings' => $settingArray
             ]);
         }
         
@@ -133,7 +152,11 @@ class SiteController extends Controller
 
 
     public function actionDashboard() {
-        return $this->render('dashboard');
+        $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings(); 
+        return $this->render('dashboard',[
+            'settings' => $settingArray
+        ]);
     }
     /**
      * Logout action.
@@ -154,6 +177,8 @@ class SiteController extends Controller
      */
     public function actionContact()
     {
+        $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();        
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -162,6 +187,7 @@ class SiteController extends Controller
         }
         return $this->render('contact', [
             'model' => $model,
+            'settings' => $settingArray
         ]);
     }
 
@@ -172,6 +198,10 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        return $this->render('about');
+        $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();
+        return $this->render('about',[
+            'settings' => $settingArray
+        ]);
     }
 }

@@ -49,24 +49,25 @@ AppAsset::register($this);
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
+        'items' => Yii::$app->user->isGuest ? ([
             ['label' => 'Home', 'url' => ['/']],
             ['label' => 'Product', 'url' => ['/site/search']],
             ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
+            ['label' => 'Login', 'url' => ['/site/login']]
+        ]) : ([
+            ['label' => 'Dashboard', 'url' => ['/site/dashboard']],
+            ['label' => 'Category', 'url' => ['/category']],
+            ['label' => 'Product', 'url' => ['/product']],
+            ['label' => 'Setting', 'url' => ['/setting']],
+            '<li>'
+            . Html::beginForm(['/site/logout'], 'post')
+            . Html::submitButton(
+                'Logout (' . Yii::$app->user->identity->username . ')',
+                ['class' => 'btn btn-link logout']
             )
-        ],
+            . Html::endForm()
+            . '</li>'            
+        ])
     ]);
     NavBar::end();
     ?>
@@ -79,11 +80,7 @@ AppAsset::register($this);
 
 
     <div class="company-footer">
-        <p class="footer-text">16F A, Gold Common Plaza No.75, Mid. Fuxin Rd.</p>
-
-        <p class="footer-text">Fuzhou Fujian China 350011 Tel: (86 591) 3926833 Fax: (86 591) 3926733</p>
-
-        <p class="footer-text">Email Address: info@foresight-cctv.com</p>
+        <?php echo $this->params["settings"]["CONTACT"]?>
     </div>
 
 <?php $this->endBody() ?>

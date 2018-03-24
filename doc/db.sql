@@ -31,3 +31,10 @@ delete from category;
 delete from product;
 
 ALTER TABLE `product` ADD `new` TINYINT(2) NOT NULL DEFAULT '0' AFTER `meta_description`;
+
+CREATE TABLE setting (
+     id INT(11) NOT NULL AUTO_INCREMENT,
+     field varchar(50) not null,
+     value varchar(5000),
+     PRIMARY KEY (id)
+);

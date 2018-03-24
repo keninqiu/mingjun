@@ -23,8 +23,9 @@ $config = [
             // Use pretty URLs
             'enablePrettyUrl' => true,
             'rules' => [
-                '<name:(\w|-)+>.html' => 'site/product',
-                'index.html' => '/site/index'
+                'index.htm' => '/site/index',
+                'supplier_news.htm' => '/site/news',                
+                '<name:(\w|-)+>.htm' => 'site/product',
             ],
         ],        
         'cache' => [

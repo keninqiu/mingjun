@@ -30,7 +30,6 @@ ul.nav-left {
     margin: 0;
     padding: 0;
     width:100%;
-    background-color: #f1f1f1;
 }
 
 ul.nav-left li a {
@@ -42,7 +41,6 @@ ul.nav-left li a {
 
 /* Change the link color on hover */
 ul.nav-left li a:hover {
-    background-color: #555;
     color: white;
 }
 
@@ -56,7 +54,8 @@ ul.nav-left li a:hover {
 }
 
 .card-img-top {
-    height: 40px;
+    height: 150px;
+    width: 150px;
 }
 .card-set {
     padding: 30px;
@@ -81,6 +80,7 @@ h5 {
   width: 100%;
 }
 .company-footer {
+    clear: both;
     background-color: #036eb8;
     margin: 0px;
     padding: 0px;
@@ -146,11 +146,181 @@ margin-right:0px;
 .navbar-inverse .navbar-nav > li > a {
     color: white;
 }
-.nav > li:hover {
-	background-color: #4CAF50;
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+}
+
+
+.card {
+    padding: 5px;
+    margin:8px;
+}
+
+.card:hover {
+}
+
+.card-image {
+    height: 200px;
+    width: 300px;
+}
+.card-container {
+    padding: 2px 16px;
+}
+
+.navbar-inverse {
+    background-color: #306dd1;
+}
+
+.col-spanning-1 {
+    padding-left: 80px;
+    padding-right: 40px;
+}
+
+.col-spanning-2 {
+    padding-left: 40px;
+    padding-right: 80px;
+}
+
+.admin-container {
+    padding-top: 40px;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button-blue-round {border-radius: 8px;background-color: #4182f4;}
+#page-title h1 {
+    font-size: 24px;
+    line-height: 28px;
+    padding-bottom: 0;
+    text-shadow: 1px 1px 1px #FFF;
+    color: #555;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.clearfix {
+    display: block;
+}
+
+#page-title, #countdown-wrap {
+    position: relative;
+    background-color: #F5F5F5;
+    padding: 25px 0;
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
+}
+
+.content-wrap {
+    position: relative;
+    padding: 40px 0;
+}
+.col_full {
+    padding: 30px;
+}
+
+.tabs-frame-content {
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+table.tbContact {
+    margin: 15px;
+    padding: 0;
+    margin-top: 20px/9;
+    display: block;
+    border: 0;
+}
+
+table {
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+@media (min-width: 992px) {
+    .col-md-left {
+        width: 20%;
+        float: left;
+    }    
+    .col-md-right {
+        width: 80%;
+        float: right;
+    }
+    .col-md-products {
+        width: 100%;
+    }
+    .col-md-card {
+        width: 30%;
+        float: left;
+        border-right: 1px solid #ccc;
+        position: relative;        
+    }
+    .col-md-card:last-child{border:none;}
+
 }
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #6997e0;
+}
+
+.site-login {
+    padding-left: 20px;
+}
+
+.related-product {
+    clear:both;
+}
+
+.similar-product-header {
+    padding: 20px;
+    font-size: 120%;
+    color: white;
+    background-color: #525c6d;
+}
+
+.newspage .event .t {
+    position: relative;
+    padding-left: 44px;
+}
+
+.newspage .event .t {
+    font-size: 22px;
+    font-weight: bold;
+    color: #036eb8;
+    padding-bottom: 20px;
+}
+
+.newspage .event .d {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.8em;
 }

@@ -11,10 +11,12 @@ $this->registerMetaTag([
     'name' => 'keywords',
     'content' => "alarm,security,camera,lenses,CCTV,VIDEO,Ground Loop Isolator,Lens,Network,Network Video,Network Video Technologies,CCTV Video,CCTV Transmission,CCTV over UTP,Video Over Unshielded Twisted Pair,Video Transmission,UTP CCTV,UTP Video,Unshielded Twisted Pair Video,Video Over UTP,Video Over Unshielded,Twisted Pair,Surveillance,Surveillance Video,Surveillance CCTV,Surveillance Video Transmission,Video BALUN,CCTV BALUN,BALUN,Twisted Pair BALUN,UTP BALUN,IP Camera Cabling"
 ]);
+
+$this->params["settings"] = $settings;
 ?>
 <div class="clearfix"><br></div>
 <div class="row">
-    <div class="col-md-3"  id="sidebar">
+    <div class="col-md-left"  id="sidebar">
         <form action="/site/search">
             <div class="input-group">
                <input type="text" class="form-control"  name="text" placeholder="" id="search">
@@ -62,7 +64,7 @@ $this->registerMetaTag([
     </div>
 
 
-    <div class="col-md-9">
+    <div class="col-md-right">
 
           
             <?php 
@@ -75,12 +77,12 @@ $this->registerMetaTag([
                 <?php
                     }
                 ?>
-                <div class="col-md-4 card">
+                <div class="col-md-card card">
                     <a href="/<?=$product["name"]?>.html">
                         <img class="card-img-top" src="<?=$product["image"]?>" alt="Card image cap">
                     </a>
                   <div class="card-block">
-                    <div><h4 class="card-title"><a href="/<?=$product["name"]?>.html"><?=$product["name"]?></a></h4></div>
+                    <div><h4 class="card-title"><a href="/<?=$product["name"]?>.htm"><?=$product["name"]?></a></h4></div>
                     <div class="card-text"><?=$product["description"]?></div>
 
                     <div class="card-footer"></div>

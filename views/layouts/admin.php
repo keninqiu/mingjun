@@ -32,40 +32,49 @@ AppAsset::register($this);
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => '',
+            'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            Html::a('Import', ['/category/import'], ['class'=>'btn btn-primary']),
-        ],
+        'items' => Yii::$app->user->isGuest ? ([
+            ['label' => 'Home', 'url' => ['/']],
+            ['label' => 'Product', 'url' => ['/site/search']],
+            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Login', 'url' => ['/site/login']]
+        ]) : ([
+            ['label' => 'Dashboard', 'url' => ['/site/dashboard']],
+            ['label' => 'Category', 'url' => ['/category']],
+            ['label' => 'Product', 'url' => ['/product']],
+            ['label' => 'Setting', 'url' => ['/setting']],
+            '<li>'
+            . Html::beginForm(['/site/logout'], 'post')
+            . Html::submitButton(
+                'Logout (' . Yii::$app->user->identity->username . ')',
+                ['class' => 'btn btn-link logout']
+            )
+            . Html::endForm()
+            . '</li>'            
+        ])
     ]);
     NavBar::end();
     ?>
 
-    <div class="container-fluid">
+    <div class="container-fluid admin-container">
         <div class="row">
-            <div class="col-md-2"  id="sidebar">
-                <ul class="nav-left">
-                  <li><a href="/category">Category</a></li>
-                  <li><a href="/product">Products</a></li>
-                  <li><a href="contact.asp">Contact</a></li>
-                  <li><a href="about.asp">About</a></li>
-                </ul>
-            </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <?= $content ?>
             </div>
         </div>   
     </div>
 </div>
 
-<footer class="footer">
+<footer class="footer navbar-fixed-bottom">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+        <p class="pull-left">&copy; CCTV <?= date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-right">Powered by Miri</p>
     </div>
 </footer>
 

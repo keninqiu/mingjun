@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 $this->title = 'Dashboard';
 $this->params['breadcrumbs'][] = $this->title;
+$this->params["settings"] = $settings;
 ?>
 
 

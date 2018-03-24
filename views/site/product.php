@@ -16,6 +16,8 @@ if(isset($details["parent_category"])) {
 }
 
 $customLink[] = ['label' => $details["category"]["name"], 'url' => '/site/search?category_id='.$details["category"]["id"]];
+
+$this->params["settings"] = $settings;
 ?>
 <div class="row">
 <?php
@@ -142,4 +144,46 @@ echo Breadcrumbs::widget([
 
     	</div>	
     </div>    
+</div>
+
+<div class="related-product">
+	<div class="similar-product-header">
+		Related Products
+	</div>
+    <div class="col-md-products">          
+            <?php 
+            $i = 0;
+            if(isset($similar_products)) {
+                foreach($similar_products as $product) { 
+                    if($i%3 == 0) {
+                ?>
+              <div class="row card-set">  
+                <?php
+                    }
+                ?>
+                <div class="col-md-card card">
+                    <a href="/<?=$product["name"]?>.html">
+                        <img class="card-img-top" src="<?=$product["image"]?>" alt="Card image cap">
+                    </a>
+                  <div class="card-block">
+                    <div><h4 class="card-title"><a href="/<?=$product["name"]?>.htm"><?=$product["name"]?></a></h4></div>
+                    <div class="card-text"><?=$product["description"]?></div>
+
+                    <div class="card-footer"></div>
+                  </div>
+                </div>
+                <?php 
+                    if($i%3 == 2) {
+                ?>
+                </div>    
+                <?php    
+                    }            
+                    $i ++;
+                } 
+            }
+            ?>
+          
+
+    </div>
+
 </div>

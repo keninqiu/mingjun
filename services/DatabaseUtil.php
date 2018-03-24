@@ -5,10 +5,22 @@ use yii\httpclient\Client;
 use keltstr\simplehtmldom\SimpleHTMLDom as SHD;
 use app\models\Category;
 use app\models\Product;
+use app\models\Setting;
 
 class DatabaseUtil
 {
 	private $baseUrl = "http://www.sct.com.tw";
+
+    public function getSettings() {
+        $settings = Setting::find()->all();
+        $settingArray = [];
+        foreach($settings as $setting) {
+            $field = $setting["field"];
+            $value = $setting["value"];
+            $settingArray[$field] = $value;
+        }
+        return $settingArray;
+    }
 
     public function getProductDetails($name) {
 
@@ -17,13 +29,33 @@ class DatabaseUtil
         $category = Category::find()->where(["id" => $category_id])->one();
         $ret = [
             "product" => $product,
-            "category" => $category,
+            "category" => $category
         ];
         if($category["parent_id"]) {
             $parent_category = Category::find()->where(["id" => $category["parent_id"]])->one();
             $ret["parent_category"] = $parent_category;
         }
         return $ret;
+    }
+
+    public function getSimilar($name) {
+        $product = Product::find()->where(["name" => $name])->one();
+        $category_id = $product["category_id"];
+        $products = Product::find()->where(["category_id" => $category_id])->all();
+        $similar_products = [];
+        $i = 0;
+        foreach($products as $item) {
+            $item_name = $item["name"];
+            if($name == $item_name) {
+                continue;
+            }
+            $i ++;
+            if($i > 9) {
+                break;
+            }
+            $similar_products[] = $item;
+        }
+        return $similar_products;
     }
 
     public function getProducts($condArray=[]) {
@@ -45,45 +77,6 @@ class DatabaseUtil
                 else {
                     $productSearch = $productSearch->andWhere(["category_id" => $category_id]);
                 }
-                /*
-                $category_id = $condArray["category_id"];
-                $category = Category::find()->where(["id" => $category_id])->one();
-                if(!$category["parent_id"]) {
-                    
-                    $products = Product::find()->where(["category_id" => $category["id"]])->all();;
-
-                    $categories = Category::find()->where(["parent_id" => $category_id])->all();
-                    if($categories) {
-                        foreach($categories as $item) {
-                            $sub_category_id = $item["id"];
-                            $subcategories = Category::find()->where(["parent_id" => $sub_category_id])->all();
-                            if($subcategories) {
-                                foreach($subcategories as $subitem) {
-                                    $sub_sub_category_id = $subitem["id"];
-                                    $subsubcategories = Category::find()->where(["parent_id" => $sub_sub_category_id])->all();
-                                    if($subsubcategories) {
-                                        foreach($subsubcategories as $subsubitem) {
-                                            $sub_sub_sub_category_id = $subsubitem["id"];
-                                        }
-                                    }
-                                    else {
-
-                                    }
-                                }
-                            }
-                            else {
-                                $condArray = ["category_id" => $sub_category_id];
-                                $subset = self::getProducts($condArray);
-                                $products = array_merge($products,$subset);                                
-                            }
-
-                        }                        
-                    }
-
-                    return $products;
-                }
-                $productSearch = $productSearch->andWhere(["category_id" => $category_id]);
-                */
             }
             if(isset($condArray["text"])) {
                 $text = $condArray["text"];

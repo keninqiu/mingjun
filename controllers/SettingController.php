@@ -3,17 +3,16 @@
 namespace app\controllers;
 
 use Yii;
-use app\models\Product;
-use app\models\ProductSearch;
+use app\models\Setting;
+use app\models\SettingSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\services\DatabaseUtil;
 
 /**
- * ProductController implements the CRUD actions for Product model.
+ * SettingController implements the CRUD actions for Setting model.
  */
-class ProductController extends Controller
+class SettingController extends Controller
 {
     public $layout = 'admin';
     /**
@@ -32,35 +31,22 @@ class ProductController extends Controller
     }
 
     /**
-     * Lists all Product models.
+     * Lists all Setting models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $dbUtil = new DatabaseUtil();
-        $settingArray = $dbUtil->getSettings();
-
-        $searchModel = new ProductSearch();
+        $searchModel = new SettingSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'settings' => $settingArray
         ]);
     }
 
-    public function actionReloadall() {
-        $dbUtil = new DatabaseUtil();
-        $products = $dbUtil->getProducts(["all" => true]);
-        foreach($products as $product) {
-            $id = $product["id"];
-            self::actionReload($id);
-        }
-    }
-
     /**
-     * Displays a single Product model.
+     * Displays a single Setting model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -72,25 +58,18 @@ class ProductController extends Controller
         ]);
     }
 
-    public function actionReload($id) {
-        $dbUtil = new DatabaseUtil();
-        $dbUtil->reloadProductFromSct($id);    
-            
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);   
-             
-    }
     /**
-     * Creates a new Product model.
+     * Creates a new Setting model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Product();
+        $model = new Setting();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            echo json_encode($model);
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -100,7 +79,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Updates an existing Product model.
+     * Updates an existing Setting model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -120,7 +99,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Deletes an existing Product model.
+     * Deletes an existing Setting model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -134,15 +113,15 @@ class ProductController extends Controller
     }
 
     /**
-     * Finds the Product model based on its primary key value.
+     * Finds the Setting model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Product the loaded model
+     * @return Setting the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Product::findOne($id)) !== null) {
+        if (($model = Setting::findOne($id)) !== null) {
             return $model;
         }
 
