@@ -11,6 +11,46 @@ class DatabaseUtil
 {
 	private $baseUrl = "http://www.sct.com.tw";
 
+    function startsWith($haystack, $needle) {
+        // search backwards starting from haystack length characters from the end
+        return $needle === "" || strrpos($haystack, $needle, -strlen($haystack)) !== false;
+    }
+
+    function endsWith($haystack, $needle) {
+        // search forward starting from end minus needle length characters
+        return $needle === "" || (($temp = strlen($haystack) - strlen($needle)) >= 0 && strpos($haystack, $needle, $temp) !== false);
+    }
+
+    public function reloadNews() {
+        $client = new Client();
+        $link = $this->baseUrl . "/supplier_news.html";
+        $html_source = SHD::file_get_html($link);
+        $aLinks = $html_source->find('a');
+        $category_id = 80;
+        foreach($aLinks as $aLink) {
+            $href = $aLink->href;
+            
+            if(self::startsWith($href,"http://www.sct.com.tw/") && self::endsWith($href,".html")) {
+                
+                $array = explode("/",$href);
+                $fileName = $array[count($array) - 1];
+                
+                $array = explode(".",$fileName);
+                $productName = $array[0];
+                
+
+                $product = Product::find()->where(["name" => $productName])->one();
+                
+                if(!$product) {
+                    //echo "productName=$productName\n";
+                    $productLink = "/" . $fileName;
+                    $productInfo = self::getProductInfo($client,$productLink);
+                    self::saveProduct($category_id,$productName,$productLink,$productInfo);  
+                }
+            }
+        }
+    }
+
     public function getSettings() {
         $settings = Setting::find()->all();
         $settingArray = [];
@@ -128,6 +168,7 @@ class DatabaseUtil
     public function getProductInfo($client,$secondLevelLink) {
         $productInfo = [];
         $link = $this->baseUrl . $secondLevelLink;
+
         $html_source = SHD::file_get_html($link);
         $titleDom = $html_source->find('title',0);
         $title = $titleDom?$titleDom->text():"";

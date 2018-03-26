@@ -24,7 +24,8 @@ $config = [
             'enablePrettyUrl' => true,
             'rules' => [
                 'index.htm' => '/site/index',
-                'supplier_news.htm' => '/site/news',                
+                'supplier_news.htm' => '/site/news',
+                'faq.htm' => '/site/faq',                
                 '<name:(\w|-)+>.htm' => 'site/product',
             ],
         ],        

@@ -13,6 +13,7 @@ use Yii;
  * @property string $meta_keywords
  * @property string $meta_description
  * @property string $name
+ * @property string $intro
  * @property string $link
  * @property string $description
  * @property string $specifications
@@ -40,7 +41,7 @@ class Product extends \yii\db\ActiveRecord
         return [
             [['category_id','new'], 'integer'],
             [['name'], 'required'],
-            [['specifications','features', 'detail','description','title','meta_keywords','meta_description'], 'string'],
+            [['specifications','features', 'detail','description','intro','title','meta_keywords','meta_description'], 'string'],
             [['name'], 'string', 'max' => 50],
             [['link', 'image', 'document'], 'string', 'max' => 200]
         ];
@@ -55,6 +56,7 @@ class Product extends \yii\db\ActiveRecord
             'id' => 'ID',
             'category_id' => 'Category ID',
             'name' => 'Name',
+            'intro' => 'Introduction',
             'link' => 'Link',
             'description' => 'Description',
             'specifications' => 'Specifications',

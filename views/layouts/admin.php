@@ -44,7 +44,6 @@ AppAsset::register($this);
             ['label' => 'Contact', 'url' => ['/site/contact']],
             ['label' => 'Login', 'url' => ['/site/login']]
         ]) : ([
-            ['label' => 'Dashboard', 'url' => ['/site/dashboard']],
             ['label' => 'Category', 'url' => ['/category']],
             ['label' => 'Product', 'url' => ['/product']],
             ['label' => 'Setting', 'url' => ['/setting']],

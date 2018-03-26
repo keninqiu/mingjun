@@ -53,9 +53,9 @@ AppAsset::register($this);
             ['label' => 'Home', 'url' => ['/']],
             ['label' => 'Product', 'url' => ['/site/search']],
             ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'FAQ', 'url' => ['/faq.htm']],
             ['label' => 'Login', 'url' => ['/site/login']]
         ]) : ([
-            ['label' => 'Dashboard', 'url' => ['/site/dashboard']],
             ['label' => 'Category', 'url' => ['/category']],
             ['label' => 'Product', 'url' => ['/product']],
             ['label' => 'Setting', 'url' => ['/setting']],

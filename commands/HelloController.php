@@ -27,7 +27,8 @@ class HelloController extends Controller
     public function actionIndex($message = 'hello world')
     {
         $dbUtil = new DatabaseUtil();
-        $dbUtil->importFromSct();
+        $dbUtil->reloadNews();
+        
         /*
         $products = $dbUtil->getProducts(["all" => true]);
         foreach($products as $product) {

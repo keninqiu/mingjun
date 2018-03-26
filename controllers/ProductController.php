@@ -59,6 +59,13 @@ class ProductController extends Controller
         }
     }
 
+    public function actionReloadnews() {
+        $dbUtil = new DatabaseUtil();
+        $products = $dbUtil->reloadNews();
+        return self::actionIndex();
+    }
+
+
     /**
      * Displays a single Product model.
      * @param integer $id

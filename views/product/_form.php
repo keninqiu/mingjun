@@ -12,9 +12,15 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
+    <div class="form-group">
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+    </div>
+    
     <?= $form->field($model, 'category_id')->textInput() ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'intro')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
 
@@ -30,9 +36,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'new')->textInput(['maxlength' => true]) ?>
     
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-    </div>
+
 
     <?php ActiveForm::end(); ?>
 

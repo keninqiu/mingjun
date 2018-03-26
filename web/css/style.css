@@ -224,10 +224,7 @@ margin-right:0px;
     border-bottom: 1px solid #EEE;
 }
 
-.content-wrap {
-    position: relative;
-    padding: 40px 0;
-}
+
 .col_full {
     padding: 30px;
 }
@@ -300,12 +297,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     clear:both;
 }
 
+.content-wrap {
+    position: relative;
+    padding: 20px 40px;
+}
+
 .similar-product-header {
     padding: 20px;
     font-size: 120%;
     color: white;
     background-color: #525c6d;
 }
+
 
 .newspage .event .t {
     position: relative;
@@ -324,3 +327,110 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     color: #666;
     line-height: 1.8em;
 }
+
+.newspage .event .t:before {
+    
+    content: "\f1ea";
+    color: #036eb8;
+    font-family: 'FontAwesome';
+    font-size: 28px;
+    font-weight: normal;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    
+}
+
+ul, ol, dl {
+    margin-left: 20px;
+}
+
+p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form {
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+.newspage .event p, .newspage .event ul li {
+    color: #666;
+}
+
+.stretched #page-title {
+    padding: 30px 0;
+}
+
+.faq .togglet h4, .faq .toggleta h4 {
+    color: #036eb8;
+    font-size: 18px;
+}
+
+.toggle .togglet, .toggle .toggleta, .acctitle, .acctitlec {
+    background-image: url(/img/toggle-plus@2x.png);
+    background-size: 24px 24px;
+    -moz-background-size: 24px 24px;
+    -webkit-background-size: 24px 24px;
+    -o-background-size: 24px 24px;
+}
+
+.faq .togglet, .faq .toggleta {
+    line-height: 20px;
+    padding-left: 36px;
+}
+
+.toggle .togglet, .toggle .toggleta {
+    display: block;
+    position: relative;
+    line-height: 24px;
+    padding-left: 32px;
+    cursor: pointer;
+    margin: 0;
+    font-size: 15px;
+    color: #036eb8;
+    background: url(/img/toggle-plus.png) no-repeat left top;
+}
+
+.toggle .toggleta, .acctitlec {
+    background-image: url(/img/toggle-minus@2x.png);
+}
+
+.toggle .toggleta {
+    font-weight: bold;
+    background: url(/img/toggle-minus.png) no-repeat left top;
+}
+
+.faq {
+    border-bottom: 1px dotted #DDD;
+}
+
+
+
+.toggle {
+    display: block;
+    position: relative;
+    margin: 0 0 20px 0;
+}
+
+.faq .togglec h3 {
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.8em;
+}
+
+h3, h4, h5, h6 {
+    padding-bottom: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    padding: 0 0 20px 20px;
+    color: #666;
+}
+
+

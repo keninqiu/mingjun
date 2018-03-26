@@ -122,6 +122,14 @@ class SiteController extends Controller
         ]); 
     }
 
+    public function actionFaq() {
+        $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();
+        return $this->render('faq',[
+            'settings' => $settingArray
+        ]); 
+    }
+
     /**
      * Login action.
      *
@@ -138,7 +146,7 @@ class SiteController extends Controller
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             //echo "haha";
-            return $this->redirect('dashboard');
+            return $this->redirect('/category');
         }
         
         else {
@@ -150,14 +158,6 @@ class SiteController extends Controller
         
     }
 
-
-    public function actionDashboard() {
-        $dbUtil = new DatabaseUtil();
-        $settingArray = $dbUtil->getSettings(); 
-        return $this->render('dashboard',[
-            'settings' => $settingArray
-        ]);
-    }
     /**
      * Logout action.
      *

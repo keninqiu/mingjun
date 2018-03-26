@@ -28,7 +28,7 @@ $this->params["settings"] = $settings;
 <li>USB support USB 2.0 and USB 1.0 and 1.1.</li>
 <li>Bi-Directional RS232.</li>
 </ul>
-<p><a href="http://www.sct.com.tw/DP02U.html"><img src="http://www.shetech.com.tw/img/news/dp02u.jpg" alt="" width="914" height="154"></a></p>
+<p><a href="/DP02U.htm"><img src="http://www.shetech.com.tw/img/news/dp02u.jpg" alt="" width="914" height="154"></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -40,7 +40,7 @@ $this->params["settings"] = $settings;
 <li>EP01HI built in isolation power to enhance power transmission reliability and safety.</li>
 <li></li>
 </ul>
-<p><a href="http://www.sct.com.tw/EP01HK.html"><img src="http://www.shetech.com.tw/img/news/EP01H.jpg" width="907" height="397"></a></p>
+<p><a href="/EP01HK.htm"><img src="http://www.shetech.com.tw/img/news/EP01H.jpg" width="907" height="397"></a></p>
 </div>
 </div>
 <br><div class="event">
@@ -61,7 +61,7 @@ $this->params["settings"] = $settings;
 <p><span style="color: #ff0000;"><strong>HKM01BR-4K&nbsp;&nbsp;<span style="color: #0000ff;">4K HDMI KVM over IP/Fiber – Receiver</span></strong></span></p>
 <p><span style="color: #ff0000;"><strong>HKM01BTP-4K&nbsp;&nbsp;<span style="color: #0000ff;">With PoE function</span></strong></span></p>
 <p><span style="color: #ff0000;"><strong>HKM01BRP-4K&nbsp;&nbsp;<span style="color: #0000ff;">With PoE function</span></strong></span></p>
-<p><span style="color: #ff0000;"><strong><a href="http://www.sct.com.tw/HKM01BT-4K.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/hkm01bt-4k-f.jpg" width="400" height="182"></a><a href="http://www.sct.com.tw/HKM01BR-4K.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/hkm01bt-4k-b.jpg" width="400" height="181"></a></strong></span></p>
+<p><span style="color: #ff0000;"><strong><a href="/HKM01BT-4K.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/hkm01bt-4k-f.jpg" width="400" height="182"></a><a href="/HKM01BR-4K.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/hkm01bt-4k-b.jpg" width="400" height="181"></a></strong></span></p>
 <ul>
 <li>Extend and distribute 4K HDMI signal with Bi-directional RS232/IR, USB and Analog Audio signals over LAN.</li>
 <li>Supports resolutions up to 4K@30Hz Ultra HD.</li>
@@ -81,12 +81,12 @@ $this->params["settings"] = $settings;
 <br><div class="event">
 <div class="t">Bluetooth Digital Amplifier</div>
 <div class="d"><h1><strong><span style="font-size: 10pt;"><span style="color: #ff0000;">VAB-12321&nbsp;</span><span style="color: #0000ff;">Bluetooth Digital Amplifier kit&nbsp;</span></span></strong><span style="color: #0000ff;"><strong><span style="font-size: 10pt;">with IR cable, IR remote control , power adapter</span></strong></span></h1>
-<p>&nbsp;<a href="http://www.sct.com.tw/VAB-1231.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/VAB-1231.jpg" width="300" height="157"></a></p>
+<p>&nbsp;<a href="/VAB-1231.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/VAB-1231.jpg" width="300" height="157"></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <h1><span style="font-size: 10pt;"><strong><span style="color: #ff0000;">VAI-3106D600</span></strong>&nbsp; <span style="color: #0000ff;"><strong>Wall Plate type Bluetooth Digital Amplifier Kit &nbsp;with IR cable, IR remote control, power adapter</strong></span></span></h1>
-<p>&nbsp;<a href="http://www.sct.com.tw/VAI-3106D600.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/VAI-3106D600.jpg" width="300" height="267"></a></p>
+<p>&nbsp;<a href="/VAI-3106D600.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/VAI-3106D600.jpg" width="300" height="267"></a></p>
 <p><img src="http://www.shetech.com.tw/img/news/Bluetooth Digital Amplifier_No_PW_80x50.jpg" width="900" height="563"></p>
 </div>
 </div>
@@ -102,7 +102,7 @@ $this->params["settings"] = $settings;
 <li>Allow to connect multiple units for longer distance.</li>
 <li>Small and easy to install in any location.</li>
 </ul>
-<p><a href="http://www.sct.com.tw/HR01-4K6G.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/HR01-4K6G.jpg" alt="" width="900"></a></p>
+<p><a href="/HR01-4K6G.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/HR01-4K6G.jpg" alt="" width="900"></a></p>
 </div>
 </div>
 <br><div class="event">
@@ -115,7 +115,7 @@ $this->params["settings"] = $settings;
 <li>Support 1080p@60Hz@16bits at 70M, 4K UHD</li>
 <li>Audio supports up to LPCM 7.1 @ 192KHz, Dolby TrueHD, DTS-HD MA</li>
 </ul>
-<p><a href="http://www.sct.com.tw/DP02E.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/DP02E.jpg" alt="" width="900" height="101"></a></p>
+<p><a href="/DP02E.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/DP02E.jpg" alt="" width="900" height="101"></a></p>
 </div>
 </div>
 <br><div class="event">
@@ -135,7 +135,7 @@ $this->params["settings"] = $settings;
 <li>Output: 600mA Max</li>
 <li>Eliminates picture tearing, crosstalk, rolling.</li>
 </ul>
-<p><a href="http://www.sct.com.tw/GL001HP.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/GL001HP-L.jpg" width="900" height="267"></a></p>
+<p><a href="/GL001HP.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/GL001HP-L.jpg" width="900" height="267"></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -147,7 +147,7 @@ $this->params["settings"] = $settings;
 <li>Support camera power output: DC12V</li>
 <li>Package included one DC24V power adapter.</li>
 </ul>
-<p><a href="http://www.sct.com.tw/CA101HDP.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/CA101HDP-L.jpg" width="900" height="98"></a></p>
+<p><a href="/CA101HDP.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/CA101HDP-L.jpg" width="900" height="98"></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -167,7 +167,7 @@ $this->params["settings"] = $settings;
 <li>Built in EDID management, 2/5.1/7.1 patched EDID.</li>
 <li>Built in 5 way joystick switch for full OSD operation.</li>
 </ul>
-<p><a href="http://www.sct.com.tw/HAE01.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/HAE01-L.jpg" height="526"></a></p>
+<p><a href="/HAE01.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/HAE01-L.jpg" height="526"></a></p>
 </div>
 </div>
 <br><div class="event">
@@ -185,8 +185,8 @@ $this->params["settings"] = $settings;
 </div>
 <br><div class="event">
 <div class="t">2017 JUL new product release</div>
-<div class="d"><p><span style="color: #0000ff;"><a href="http://www.sct.com.tw/HE02EIX.html" target="_blank"><strong><span style="color: #ff0000;">HE02EIX</span> &nbsp;</strong></a><strong><a href="http://www.sct.com.tw/HE02EIX.html" target="_blank">4K 60Hz 4:4:4 HDMI with IR/RS232 CAT5e Extender 70M </a>&nbsp;</strong></span></p>
-<p><a href="http://www.sct.com.tw/HE02EX.html" target="_blank"><span style="color: #0000ff;"><strong><span style="color: #ff0000;">HE02EX</span> &nbsp;&nbsp;</strong><strong>4K 60Hz 4:4:4 HDMI with IR/RS232 CAT5e Extender 100M</strong></span></a></p>
+<div class="d"><p><span style="color: #0000ff;"><a href="/HE02EIX.htm" target="_blank"><strong><span style="color: #ff0000;">HE02EIX</span> &nbsp;</strong></a><strong><a href="/HE02EIX.htm" target="_blank">4K 60Hz 4:4:4 HDMI with IR/RS232 CAT5e Extender 70M </a>&nbsp;</strong></span></p>
+<p><a href="/HE02EX.htm" target="_blank"><span style="color: #0000ff;"><strong><span style="color: #ff0000;">HE02EX</span> &nbsp;&nbsp;</strong><strong>4K 60Hz 4:4:4 HDMI with IR/RS232 CAT5e Extender 100M</strong></span></a></p>
 <ul>
 <li>Extends HDMI 4K UHD, RS232 and IR signal over one CAT5e/6 cable.</li>
 <li>HDMI 2.0, HDCP 2.2/1.4 &amp; DVI Compliant.</li>
@@ -204,7 +204,7 @@ $this->params["settings"] = $settings;
 <p><img src="http://www.shetech.com.tw/img/news/HE02EIX%20HE02EX%204K%2060Hz%20HDMI%20(HDBaseT)_80x50.jpg" alt="" width="900" height="563"></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
-<p><a href="http://www.sct.com.tw/IP04X90.html" target="_blank"><span style="color: #ff0000;"><strong><u>IP04X90</u></strong></span><span style="color: #0000ff;"><strong><u>&nbsp; </u></strong><strong><u>Ultra High Power</u></strong><strong><u> 90W POE Repeater</u></strong></span></a>&nbsp;</p>
+<p><a href="/IP04X90.htm" target="_blank"><span style="color: #ff0000;"><strong><u>IP04X90</u></strong></span><span style="color: #0000ff;"><strong><u>&nbsp; </u></strong><strong><u>Ultra High Power</u></strong><strong><u> 90W POE Repeater</u></strong></span></a>&nbsp;</p>
 <ul>
 <li>Extend of both power and data beyond 100 meters.</li>
 <li>Allow to use multiple repeaters for longer range.</li>
@@ -253,7 +253,7 @@ $this->params["settings"] = $settings;
 <li>Output support: CVBS (Composite video), AHD/HD-TVI/CVI loop out</li>
 <li>Compact size.</li>
 </ul>
-<p><a href="http://www.sct.com.tw/AD001HD1.html"><strong><img src="http://www.shetech.com.tw/img/news/AD001HD1-L.jpg" width="900" height="191"></strong></a></p>
+<p><a href="/AD001HD1.htm"><strong><img src="http://www.shetech.com.tw/img/news/AD001HD1-L.jpg" width="900" height="191"></strong></a></p>
 </div>
 </div>
 <br><div class="event">
@@ -274,7 +274,7 @@ $this->params["settings"] = $settings;
 <li>Support high resolution 1080p at 40M.</li>
 <li>Support long distance up to 70 meters at 1280x720.</li>
 </ul>
-<p><a href="http://www.sct.com.tw/HE01ERK.html"><strong><img src="http://www.shetech.com.tw/img/news/HE01ERK-L.jpg" alt="" width="900" height="121"></strong></a></p>
+<p><a href="/HE01ERK.htm"><strong><img src="http://www.shetech.com.tw/img/news/HE01ERK-L.jpg" alt="" width="900" height="121"></strong></a></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -289,7 +289,7 @@ $this->params["settings"] = $settings;
 <li>Control Options: Front panel buttons, IR remote control with OSD ( on-screen display), RS232, Ethernet with built in web browser.</li>
 <li>Support Android/iOS APP control.</li>
 </ul>
-<p><a href="http://www.sct.com.tw/HM44.html"><strong><img src="http://www.shetech.com.tw/img/news/HM44-L.jpg" width="900" height="471"></strong></a></p>
+<p><a href="/HM44.htm"><strong><img src="http://www.shetech.com.tw/img/news/HM44-L.jpg" width="900" height="471"></strong></a></p>
 </div>
 </div>
 <br><div class="event">
@@ -310,7 +310,7 @@ $this->params["settings"] = $settings;
 <li>Support different mode display: Quad, picture on picture (POP) and full screen display.</li>
 <li>Perfect for control remote machines and security monitoring systems, digital signage application.</li>
 </ul>
-<p><strong><a href="http://www.sct.com.tw/HM41E.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/HM41E-L.jpg" width="900" height="449"></a></strong></p>
+<p><strong><a href="/HM41E.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/HM41E-L.jpg" width="900" height="449"></a></strong></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -327,7 +327,7 @@ $this->params["settings"] = $settings;
 <li>Built in OSD to display input/output setting.</li>
 <li>HDMI and DVI compliant. (support DVI monitor by a HDMI to DVI adaptor)</li>
 </ul>
-<p><strong><a href="http://www.sct.com.tw/AD001HD4.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/AD001HD4-L.jpg" width="900" height="235"></a></strong></p>
+<p><strong><a href="/AD001HD4.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/AD001HD4-L.jpg" width="900" height="235"></a></strong></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -347,8 +347,8 @@ $this->params["settings"] = $settings;
 <li>HDMI 1.3, HDCP 1.4, DVI 1.0 compliant.</li>
 <li>Applications for family cable TV transmission, hotels, hospitals, schools, video conference room, supermarket, malls, shops where need meeting video distribution, digital signage, student training broadcasting, DVD Blue Ray players video distribution, security monitoring system..etc.</li>
 </ul>
-<p><strong><a href="http://www.sct.com.tw/HE05CT.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/HE05C-1N.jpg" width="900" height="267"></a></strong></p>
-<p><strong><a href="http://www.sct.com.tw/HE05CR.html" target="_blank"><img src="http://www.shetech.com.tw/img/news/HE05C-3N.jpg" width="900" height="259"></a></strong></p>
+<p><strong><a href="/HE05CT.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/HE05C-1N.jpg" width="900" height="267"></a></strong></p>
+<p><strong><a href="/HE05CR.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/HE05C-3N.jpg" width="900" height="259"></a></strong></p>
 </div>
 </div>
 <br><div class="event">
@@ -381,8 +381,8 @@ $(document).ready(function() {
 	
 	
 <tbody><tr><td class="colContact">Address:</td><td>10F, No. 493, Chung-Cheng Rd., Hsin Tien Dist., New Taipei City 231, Taiwan</td></tr><tr><td class="colContact">TEL:</td><td>886-2-22186886 (Rep.)</td></tr><tr><td class="colContact">FAX:</td><td>886-2-22187989</td></tr><tr><td class="colContact">Email:</td><td>
-<a href="supplier_contact.html">service@sct.com.tw</a><br>
-<a href="supplier_contact.html">smart.cabling@msa.hinet.net</a><br>
+<a href="supplier_contact.htm">service@sct.com.tw</a><br>
+<a href="supplier_contact.htm">smart.cabling@msa.hinet.net</a><br>
 </td></tr>
 
 <tr><td class="colContact">URL:</td><td><a href="http://www.sct.com.tw" target="_top">http://www.sct.com.tw</a><br>

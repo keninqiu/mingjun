@@ -57,15 +57,18 @@ echo Breadcrumbs::widget([
 			  	if($specifications) {
 			  ?>
 			  <li class="active"><a data-toggle="tab" href="#specifications">Specifications</a></li>
+			  <li><a data-toggle="tab" href="#intro">Introduction</a></li>
 			  <?php
 			  	}
 			  ?>
 			  <?php 
+			  	$intro = $details["product"]["intro"];
 			  	$features = $details["product"]["features"];
 			  	$features = json_decode($features);
 			  	if($features) {
 			  ?>
-			  <li class="active"><a data-toggle="tab" href="#features">Features</a></li>
+			  
+			  <li><a data-toggle="tab" href="#features">Features</a></li>
 			  <?php
 			  	} 
 			  ?>
@@ -90,6 +93,11 @@ echo Breadcrumbs::widget([
 			  </div>
 			  <?php
 			  }
+			  ?>
+			  <div id="intro" class="tab-pane fade in active">
+			  	<?= $intro?>
+			  </div>
+			  <?php
 			  if($features) {
 			  ?>
 			  <div id="features" class="tab-pane fade in active">
@@ -162,7 +170,7 @@ echo Breadcrumbs::widget([
                     }
                 ?>
                 <div class="col-md-card card">
-                    <a href="/<?=$product["name"]?>.html">
+                    <a href="/<?=$product["name"]?>.htm">
                         <img class="card-img-top" src="<?=$product["image"]?>" alt="Card image cap">
                     </a>
                   <div class="card-block">
