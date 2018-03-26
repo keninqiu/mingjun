@@ -52,12 +52,13 @@ echo Breadcrumbs::widget([
 
 		<div class="row">
 			<ul class="nav nav-tabs">
+				<li><a data-toggle="tab" href="#intro">Introduction</a></li>
 			  <?php 
 			  	$specifications = json_decode($details["product"]["specifications"],true);
 			  	if($specifications) {
 			  ?>
 			  <li class="active"><a data-toggle="tab" href="#specifications">Specifications</a></li>
-			  <li><a data-toggle="tab" href="#intro">Introduction</a></li>
+			  
 			  <?php
 			  	}
 			  ?>
