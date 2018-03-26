@@ -130,6 +130,14 @@ class SiteController extends Controller
         ]); 
     }
 
+    public function actionSolution() {
+        $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();
+        return $this->render('solution',[
+            'settings' => $settingArray
+        ]); 
+    }
+
     /**
      * Login action.
      *

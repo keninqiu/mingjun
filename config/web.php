@@ -25,6 +25,7 @@ $config = [
             'rules' => [
                 'index.htm' => '/site/index',
                 'supplier_news.htm' => '/site/news',
+                'solution.htm' => '/site/solution',  
                 'faq.htm' => '/site/faq',                
                 '<name:(\w|-)+>.htm' => 'site/product',
                 '<name:(\w|-)+>.html' => 'site/product',

@@ -21,6 +21,37 @@ class DatabaseUtil
         return $needle === "" || (($temp = strlen($haystack) - strlen($needle)) >= 0 && strpos($haystack, $needle, $temp) !== false);
     }
 
+    public function loadSolution() {
+        $client = new Client();
+        $link = $this->baseUrl . "/supplier_technology.html";
+        $html_source = SHD::file_get_html($link);
+        $links = $html_source->find('a');
+        foreach($links as $link) {
+            $href = $link->href;
+            if(self::startsWith($href,"http://www.shetech.com.tw/solutions/") || self::startsWith($href,"HTTP://www.shetech.com.tw/solutions/")) {
+                echo "href=$href\n";
+                $array = explode("/", $href);
+                $name = $array[count($array) - 1];
+                $name = str_replace("%20", " ", $name);
+                $name = str_replace("&amp;", "&", $name);
+                $name = str_replace("&ndash;", "-", $name);
+                
+                $href = str_replace(" ", "%20", $href);
+                $pdfFile=Yii::$app->basePath."/web/solutions/$name";
+
+                if(!file_exists($pdfFile)) {
+                    $response = $client->createRequest()
+                        ->setMethod('GET')
+                        ->setUrl($href)
+                        ->send();                
+                    $fp = fopen($pdfFile, 'w');
+                    fwrite($fp, $response->content);
+                    fclose($fp); 
+                }                
+            }
+        }
+    }
+
     public function reloadNews() {
         $client = new Client();
         $link = $this->baseUrl . "/supplier_news.html";

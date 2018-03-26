@@ -19,6 +19,7 @@ nav a + div > ul > li > a + div > ul > li > a {
 
 .nav-link {
 	color: black;
+    font-weight:bold;
 }
 
 div.card {

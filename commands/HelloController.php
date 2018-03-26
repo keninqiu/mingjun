@@ -24,11 +24,17 @@ class HelloController extends Controller
      * This command echoes what you have entered as the message.
      * @param string $message the message to be echoed.
      */
+    private function loadSolution() {
+        $dbUtil = new DatabaseUtil();
+        $dbUtil->loadSolution();        
+    }
     public function actionIndex($message = 'hello world')
     {
+        self::loadSolution();
+        /*
         $dbUtil = new DatabaseUtil();
         $dbUtil->reloadNews();
-        
+        */
         /*
         $products = $dbUtil->getProducts(["all" => true]);
         foreach($products as $product) {
