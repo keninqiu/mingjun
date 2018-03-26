@@ -27,6 +27,7 @@ $config = [
                 'supplier_news.htm' => '/site/news',
                 'faq.htm' => '/site/faq',                
                 '<name:(\w|-)+>.htm' => 'site/product',
+                '<name:(\w|-)+>.html' => 'site/product',
             ],
         ],        
         'cache' => [

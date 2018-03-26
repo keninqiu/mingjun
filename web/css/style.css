@@ -55,7 +55,6 @@ ul.nav-left li a:hover {
 
 .card-img-top {
     height: 150px;
-    width: 150px;
 }
 .card-set {
     padding: 30px;
@@ -277,7 +276,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     .col-md-card {
         width: 30%;
         float: left;
-        border-right: 1px solid #ccc;
         position: relative;        
     }
     .col-md-card:last-child{border:none;}
