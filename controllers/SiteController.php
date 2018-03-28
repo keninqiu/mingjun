@@ -81,10 +81,12 @@ class SiteController extends Controller
         $request = Yii::$app->request;
         $category_id = $request->get('category_id');
         $text = $request->get('text');
-
+        $expanded_category_id = 0;
         $condArray = [];
         if($category_id) {
-            $condArray["category_id"] = $category_id;           
+            $condArray["category_id"] = $category_id;    
+            $expandedCategory = $dbUtil->getCategory($category_id); 
+            $expanded_category_id = $expandedCategory["parent_id"];     
         }
         if($text) {
             $condArray["text"] = $text;     
@@ -94,9 +96,9 @@ class SiteController extends Controller
         return $this->render('search',[
             'categories' => $categories,
             'products' => $products,
-            'settings' => $settingArray
+            'settings' => $settingArray,
+            'expanded_category_id' => $expanded_category_id
         ]);
-        
     }
 
     public function actionProduct() {

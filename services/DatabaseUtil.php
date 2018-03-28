@@ -173,6 +173,11 @@ class DatabaseUtil
         return preg_replace_callback('/\\\\u([0-9a-f]{4})/i', 'self::replace_unicode_escape_sequence', $str);
     }
 
+    public function getCategory($category_id) {
+        $category = Category::find()->where(["id" => $category_id])->one();
+        return $category;
+    }
+
     public function getCategories() {
         $categories = Category::find()->all();
         $categoriesWithLayer = [];

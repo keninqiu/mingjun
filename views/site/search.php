@@ -17,7 +17,7 @@ $this->params["settings"] = $settings;
 <div class="clearfix"><br></div>
 <div class="row">
     <div class="col-md-left"  id="sidebar">
-        <form action="/site/search">
+        <form action="/site/search" class="search-form">
             <div class="input-group">
                <input type="text" class="form-control"  name="text" placeholder="" id="search">
                <span class="input-group-btn">
@@ -41,7 +41,19 @@ $this->params["settings"] = $settings;
                     ?>
                     <li class="nav-item">
                     <a class="nav-link collapsed" href="#submenu<?=$category["id"]?>" data-toggle="collapse" data-target="#submenu<?=$category["id"]?>"><?=$category["name"]?></a>
+                    <?php 
+                    if(($expanded_category_id > 0) && ($expanded_category_id == $category["id"])) {
+                    ?>
+                    <div class="" id="submenu<?=$category["id"]?>" aria-expanded="false">
+                    <?php
+                    }
+                    else {
+                    ?>
                     <div class="collapse" id="submenu<?=$category["id"]?>" aria-expanded="false">
+                    <?php 
+                    }
+                    ?>
+                    
                         <ul class="flex-column pl-2 nav">
                             <?php 
                             foreach($category["children"] as $child) {

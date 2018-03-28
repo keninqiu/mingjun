@@ -305,7 +305,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     padding: 20px;
     font-size: 120%;
     color: white;
-    background-color: #525c6d;
+    background-color: #5d8fe2;
 }
 
 
@@ -432,4 +432,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #666;
 }
 
-
+.search-form {
+    padding-left: 10px;
+}
