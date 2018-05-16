@@ -30,10 +30,12 @@ $config = [
                 '<name:(\w|-)+>.htm' => '/site/product',
                 '<name:(\w|-)+>.html' => '/site/product',
             ],
-        ],        
+        ],  
+        /*      
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        */
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
