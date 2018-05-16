@@ -19,7 +19,7 @@ $customLink[] = ['label' => $details["category"]["name"], 'url' => '/site/search
 
 $this->params["settings"] = $settings;
 ?>
-<div class="row">
+<div class="row row-breadcrumbs">
 <?php
 echo Breadcrumbs::widget([
       'homeLink' => [ 
