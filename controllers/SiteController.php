@@ -132,6 +132,14 @@ class SiteController extends Controller
         ]); 
     }
 
+    public function actionQuote() {
+        $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();
+        return $this->render('quote',[
+            'settings' => $settingArray
+        ]); 
+    }
+
     public function actionSolution() {
         $dbUtil = new DatabaseUtil();
         $settingArray = $dbUtil->getSettings();

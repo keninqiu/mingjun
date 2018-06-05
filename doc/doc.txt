@@ -31,3 +31,5 @@ menu yanse            --done
 
 category product selection img
 
+http://www.sct.com.tw/supplier_contact.html
+

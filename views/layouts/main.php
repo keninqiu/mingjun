@@ -56,6 +56,7 @@ AppAsset::register($this);
             ['label' => 'News and Press Release', 'url' => ['/supplier_news.htm']],
             ['label' => 'FAQ', 'url' => ['/faq.htm']],
             ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Contact Us', 'url' => ['/supplier_contact.htm']],
             ['label' => 'Login', 'url' => ['/site/login']]
         ]) : ([
             ['label' => 'Category', 'url' => ['/category']],

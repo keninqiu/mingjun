@@ -38,3 +38,21 @@ CREATE TABLE setting (
      value varchar(5000),
      PRIMARY KEY (id)
 );
+
+CREATE TABLE quote (
+     id INT(11) NOT NULL AUTO_INCREMENT,
+     subject varchar(500) not null,
+     message varchar(5000) not null,
+     name varchar(500),
+     company varchar(500),
+     address varchar(500),
+     city varchar(200),
+     province varchar(200),
+     postal varchar(200),
+     country varchar(200),
+     phone varchar(200),
+     fax varchar(200),
+     email varchar(200),
+     type varchar(500),
+     PRIMARY KEY (id)
+);

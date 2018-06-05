@@ -26,6 +26,7 @@ $config = [
                 'index.htm' => '/site/index',
                 'supplier_news.htm' => '/site/news',
                 'solution.htm' => '/site/solution',  
+                'supplier_contact.htm' => '/site/quote',
                 'faq.htm' => '/site/faq',                
                 '<name:(\w|-)+>.htm' => '/site/product',
                 '<name:(\w|-)+>.html' => '/site/product',

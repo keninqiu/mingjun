@@ -46,6 +46,7 @@ AppAsset::register($this);
         ]) : ([
             ['label' => 'Category', 'url' => ['/category']],
             ['label' => 'Product', 'url' => ['/product']],
+            ['label' => 'Quote', 'url' => ['/quote']],
             ['label' => 'Setting', 'url' => ['/setting']],
             '<li>'
             . Html::beginForm(['/site/logout'], 'post')
