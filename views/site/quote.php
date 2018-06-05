@@ -16,53 +16,44 @@ $this->params["settings"] = $settings;
 		</div>
 		<div class="content-wrap">
 <div class="container clearfix">
-<h1></h1>
-<h1></h1>
-<h1></h1>
-<div class="col_full">
-<div class="InquiryForm"><form name="InquiryForm" method="post" action="http://www.sct.com.tw/SiteShare6/AP/SendContact3c2.php" enctype="multipart/form-data" onsubmit="return check(this)"><input type="hidden" name="ComDIR" value="org/ee/smartcabling">
-<input type="hidden" name="http_referer" value="http://www.sct.com.tw/">
- <input type="hidden" name="lang" value="en"> 					<h3><span class="txtImportant">*</span> indicates required fields.</h3>
-				<table cellspacing="0" cellpadding="0" class="inquForm">
-				
-					<tbody>
-						<tr>
-							<td class="columnName"><span class="txtImportant">*</span> Inquiry subject:</td>
-							<td><input name="Subject" type="text" class="text"></td>
-						</tr>
-						<tr>
-							<td class="columnName"><span class="txtImportant">*</span> Message:</td>
-							<td><textarea class="message" id="message" name="Buyer[Message]" cols="50" rows="6"></textarea></td>
-						</tr>
-						<tr>
-							<td class="columnName"><span class="txtImportant">*</span> Name:</td>
-							<td><input name="Name" type="text" class="text"></td>
-						</tr>
-						<tr>
-							<td class="columnName"><span class="txtImportant">*</span> Company:</td>
-							<td><input name="Company" type="text" class="text"></td>
-						</tr>
-						<tr>
-							<td class="columnName"><span class="txtImportant">*</span> Address:</td>
-							<td><input name="Address" type="text" class="text"></td>
-						</tr>
-						<tr>
-							<td class="columnName">City:</td>
-							<td><input name="City" type="text" class="text"></td>
-						</tr>
-						<tr>
-							<td class="columnName">State/Province:</td>
-							<td><input name="State" type="text" class="text"></td>
-						</tr>
-						<tr>
-							<td class="columnName">Zip/Postal code:</td>
-							<td><input name="Zip" type="text" class="text"></td>
-						</tr>
-						
-						<tr>
-							<td class="columnName"><span class="txtImportant">*</span> Country:</td>
-							<td>
-								<select name="Country">
+<h3><span class="txtImportant">*</span> indicates required fields.</h3>
+<form action="/site/quote-create" method="POST" onsubmit="return check()">
+  <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
+  <div class="form-group">
+    <label for="exampleInputEmail1"><span class="txtImportant">*</span>Inquiry subject:</label>
+    <input type="text" class="form-control" name="Quote[subject]" id="subject" placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1"><span class="txtImportant">*</span> Message:</label>
+    <textarea class="form-control" id="message" name="Quote[message]" rows="3"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1"><span class="txtImportant">*</span> Name:</label>
+    <input type="text" class="form-control" id="name" name="Quote[name]"  placeholder="">
+  </div>  
+  <div class="form-group">
+    <label for="exampleInputEmail1"><span class="txtImportant">*</span> Company:</label>
+    <input type="text" class="form-control" id="company" name="Quote[company]" placeholder="">
+  </div>  
+  <div class="form-group">
+    <label for="exampleInputEmail1"><span class="txtImportant">*</span> Address:</label>
+    <input type="text" class="form-control" id="address" name="Quote[address]" placeholder="">
+  </div>  
+  <div class="form-group">
+    <label for="exampleInputEmail1"> City:</label>
+    <input type="text" class="form-control" id="city" name="Quote[city]" placeholder="">
+  </div>  
+  <div class="form-group">
+    <label for="exampleInputEmail1"> State/Province:</label>
+    <input type="text" class="form-control" id="province" name="Quote[province]" placeholder="">
+  </div>  
+  <div class="form-group">
+    <label for="exampleInputEmail1"> Zip/Postal code:</label>
+    <input type="text" class="form-control" id="postal" name="Quote[postal]" placeholder="">
+  </div>  
+  <div class="form-group">
+    <label for="exampleInputEmail1"><span class="txtImportant">*</span> Country:</label>
+    <select class="form-control" id="country" name="Quote[country]">
                                   <option></option>
                                   <option>Albania</option>
                                   <option>Algeria</option>
@@ -298,131 +289,166 @@ $this->params["settings"] = $settings;
                                   <option>Zaire</option>
                                   <option>Zambia</option>
                                   <option>Zimbabwe</option>
-                                </select>
-							</td>
-						</tr>
-						<tr>
-							<td class="columnName"><span class="txtImportant">*</span> TEL:</td>
-							<td><input name="Tel" type="text" class="text"></td>
-						</tr>
-						<tr>
-							<td class="columnName"><span class="txtImportant">*</span> FAX:</td>
-							<td><input name="Fax" type="text" class="text"></td>
-						</tr>
-						<tr>
-							<td class="columnName"><span class="txtImportant">*</span> Email:</td>
-							<td><input name="Email" type="text" class="text" value="">
-							</td>
-						</tr>
-						
-						<tr>
-							<td valign="top" class="columnName"><span class="txtImportant">*</span> Business Type:</td>
-							<td>
-								<input name="Buyer[Btypes][0]" type="checkbox" class="checkbox" value="1">Importer<br>
-                                <input name="Buyer[Btypes][1]" type="checkbox" class="checkbox" value="1">Wholesaler<br>
-                                <input name="Buyer[Btypes][2]" type="checkbox" class="checkbox" value="1">Department Store<br>
-                                <input name="Buyer[Btypes][3]" type="checkbox" class="checkbox" value="1">Supermarket<br>
-                                <input name="Buyer[Btypes][4]" type="checkbox" class="checkbox" value="1">Commission Agent<br>
-                                <input name="Buyer[Btypes][5]" type="checkbox" class="checkbox" value="1">End User<br>
-                                <input name="Buyer[Btypes][6]" type="checkbox" class="checkbox" value="1">Manufacturer
-							</td>
-						</tr>
-						<tr>
-							<td class="columnName"><span class="txtImportant">*</span> Verification:</td>
-							<td><span class="txtImportant">Please enter the code you see in the box below.</span><br><img src="/SiteShare6/AP/chknum.php"> <input name="authnumx2" type="text" size="8" class="authnumx2"></td>
-						</tr>
-					</tbody>
-				</table>
-				<div align="center">
-					<input type="Submit" name="Submit" value="Submit" class="btnLogin">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" name="Clear" value="Clear" class="btnLogin">
-				</div></form>
-	    <script language="javascript">
-function check(theForm)
+    </select>
+  </div> 
+
+  <div class="form-group">
+    <label for="exampleInputEmail1"><span class="txtImportant">*</span> TEL:</label>
+    <input type="text" class="form-control" id="phone" name="Quote[phone]" placeholder="">
+  </div>    
+  <div class="form-group">
+    <label for="exampleInputEmail1"><span class="txtImportant">*</span> FAX:</label>
+    <input type="text" class="form-control" id="fax" name="Quote[fax]" placeholder="">
+  </div>  
+  <div class="form-group">
+    <label for="exampleInputEmail1"><span class="txtImportant">*</span> Email:</label>
+    <input type="text" class="form-control" id="email" name="Quote[email]" placeholder="">
+  </div>  
+  <div class="form-group">
+    <label for="exampleInputEmail1"><span class="txtImportant">*</span> Business Type:</label>
+    <input type="hidden" class="form-control" id="type" name="Quote[type]" placeholder="">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" name="typeCheck" onclick="formType()" value="Importer">
+      <label class="form-check-label" for="gridCheck">
+        Importer
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" name="typeCheck" onclick="formType()" value="Wholesaler">
+      <label class="form-check-label" for="gridCheck">
+        Wholesaler
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" name="typeCheck" onclick="formType()" value="Department Store">
+      <label class="form-check-label" for="gridCheck">
+        Department Store
+      </label>
+    </div>    
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" name="typeCheck" onclick="formType()" value="Supermarket">
+      <label class="form-check-label" for="gridCheck">
+        Supermarket
+      </label>
+    </div>  
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" name="typeCheck" onclick="formType()" value="Commission Agent">
+      <label class="form-check-label" for="gridCheck">
+        Commission Agent
+      </label>
+    </div>   
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" name="typeCheck" onclick="formType()" value="End User">
+      <label class="form-check-label" for="gridCheck">
+        End User
+      </label>
+    </div>     
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck" name="typeCheck" onclick="formType()" value="Manufacturer">
+      <label class="form-check-label" for="gridCheck">
+        Manufacturer
+      </label>
+    </div>          
+  </div>  
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+<script>
+
+function check()
 {
   
 
-  if (theForm.Subject.value == "")
+  if ($('#subject').val() == "")
     {
       alert("Please input your Inquiry subject!");
-      theForm.Subject.focus();
+      $('#subject').focus();
       return (false);
     }
-  if (theForm.Name.value == "")
+  if ($('#message').val() == "")
+    {
+      alert("Please input your Message!");
+      $('#message').focus();
+      return (false);
+    }    
+  if ($('#name').val() == "")
     {
       alert("Please input your Name!");
-      theForm.Name.focus();
+      $('#name').focus();
       return (false);
     }
 
-  if (theForm.Company.value == "")
+  if ($('#company').val() == "")
     {
       alert("Please input your Company!");
-      theForm.Company.focus();
+      $('#company').focus();
       return (false);
     }
-  if (theForm.Address.value == "")
+  if ($('#address').val() == "")
     {
       alert("Please input your Address!");
-      theForm.Address.focus();
+      $('#address').focus();
       return (false);
     }
 
-  var index=theForm.Country.selectedIndex;
-  theForm.Country.options[index].value=theForm.Country.options[index].text;
-  if (theForm.Country.options[index].value == "")
+  if ($('#country').val() == "")
     {
       alert("Please input your Country!");
-      theForm.Country.options.focus();
-      return (false);
-    }
-  if (theForm.Tel.value == "")
-    {
-      alert("Please input your TEL!");
-      theForm.Tel.focus();
+      $('#country').focus();
       return (false);
     }
 
-  if (theForm.Fax.value == "")
+  if ($('#phone').val() == "")
+    {
+      alert("Please input your TEL!");
+      $('#phone').focus();
+      return (false);
+    }
+
+  if ($('#fax').val() == "")
     {
       alert("Please input your FAX!");
-      theForm.Fax.focus();
+      $('#fax').focus();
       return (false);
     }
   
-  if (theForm.Email.value == "")
+  if ($('#email').val() == "")
     {
       alert("Please input your Email!");
-      theForm.Email.focus();
+      $('#email').focus();
       return (false);
     }
     
- if ( theForm.Email.value != "" &&  ! /^[_\.\d\w\-]+@([\d\w][\d\w\-]+\.)+[\w]{2,3}$/.test(theForm.Email.value)) 
+ if ( $('#email').val() != "" &&  ! /^[_\.\d\w\-]+@([\d\w][\d\w\-]+\.)+[\w]{2,3}$/.test($('#email').val())) 
    { 
      alert("Email address error! Please check your email again."); 
-     theForm.Email.focus();
+     $('#email').focus();
      return (false); 
    } 
    
+  if ($('#type').val() == "")
+    {
+      alert("Please input your Business Type!");
+      return (false);
+    }
 
-    if (document.getElementById("message").value == "")
-    {
-      alert("Please input your Message!");
-      document.getElementById("message").focus();
-      return (false);
-    }
-    if (theForm.authnumx2.value == "")
-    {
-      alert("Please input your Verification!");
-      theForm.authnumx2.focus();
-      return (false);
-    }
 return (true);
 }
 
 
-</script>
-</div>        </div>
+function formType() {
 
+var typeCom = '';
+$("input:checkbox[name=typeCheck]:checked").each(function(){
+    typeCom += $(this).val() + ',';
+});
+
+if(typeCom != '') {
+  typeCom = typeCom.substring(0, typeCom.length - 1);
+}
+
+$("#type").val(typeCom);
+}
+</script>
 		</div>
 	</div>
 </div>

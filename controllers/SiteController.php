@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Quote;
 use app\services\DatabaseUtil;
 
 class SiteController extends Controller
@@ -138,6 +139,33 @@ class SiteController extends Controller
         return $this->render('quote',[
             'settings' => $settingArray
         ]); 
+    }
+
+    public function actionQuoteSuccess() {
+        $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();
+        return $this->render('quote-success',[
+            'settings' => $settingArray
+        ]); 
+    }
+
+    public function actionQuoteFail() {
+        $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();
+        return $this->render('quote-fail',[
+            'settings' => $settingArray
+        ]); 
+    }
+
+    public function actionQuoteCreate()
+    {
+        $model = new Quote();
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['quote-success', 'id' => $model->id]);
+        }
+        return $this->render('quote-fail', [
+            'model' => $model,
+        ]);
     }
 
     public function actionSolution() {

@@ -64,7 +64,7 @@ class Quote extends \yii\db\ActiveRecord
             'phone' => 'Phone',
             'fax' => 'Fax',
             'email' => 'Email',
-            'type' => 'Type',
+            'type' => 'Business Type',
         ];
     }
 }

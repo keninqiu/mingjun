@@ -83,7 +83,12 @@ AppAsset::register($this);
 
 
     <div class="company-footer">
-        <?php echo $this->params["settings"]["CONTACT"]?>
+        <?php 
+        if(isset($this->params["settings"])) {
+            echo $this->params["settings"]["CONTACT"];
+        }
+        
+        ?>
     </div>
 
 <?php $this->endBody() ?>

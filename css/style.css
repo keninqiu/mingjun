@@ -439,3 +439,202 @@ h1, h2, h3, h4, h5, h6 {
 .row-breadcrumbs {
     margin-top:11px;
 }
+
+/*
+form {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+table {
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    display: table-cell;
+
+}
+
+.inquForm input[type="text"], input[type="password"], select, textarea {
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 5px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+input[type="text"], input[type="password"] {
+    width: 90%;
+}
+
+input[type="text"], input[type="password"], select, textarea {
+    display: block;
+    background: #FFF;
+    padding: 7px;
+    margin-bottom: 10px;
+    border: 1px solid #DDD;
+    border-top-width: 2px;
+    outline: 0;
+    font: normal 11px/100%;
+    color: #666;
+}
+
+input[type="text"], input[type="password"], textarea {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+input {
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    cursor: auto;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    font: 11px system-ui;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+textarea {
+    -webkit-appearance: textarea;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    user-select: text;
+    flex-direction: column;
+    resize: auto;
+    cursor: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial;
+    padding: 2px;
+}
+
+input, textarea, select, button {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    font: 11px system-ui;
+}
+textarea {
+    width: 90%;
+    height: 150px;
+    line-height: 150%;
+}
+
+.inquForm input[type="text"], input[type="password"], select, textarea {
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 5px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    display: block;
+    padding: 7px;
+    margin-bottom: 10px;    
+    outline: 0;
+}
+
+.inquForm td {
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+    padding-top: 10px;
+}
+
+
+input[type="checkbox"], input[type="radio"] {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+}
+@media (max-width: 979px) and (min-width: 768px)
+input, textarea, .uneditable-input {
+    margin-left: 0;
+}
+
+
+input[type="checkbox" i] {
+    -webkit-appearance: checkbox;
+    box-sizing: border-box;
+}
+
+input[type="radio" i], input[type="checkbox" i] {
+    background-color: initial;
+    margin: 3px 0.5ex;
+    padding: initial;
+    border: initial;
+}
+
+input[type="submit"], input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+.btnLogin {
+    cursor: pointer;
+    background-color: #036eb8;
+    border-radius: 10px;
+    padding: 5px 15px;
+    color: #fff;
+    border: none;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+input[type="text"], input[type="password"] {
+    width: 90%;
+}
+*/
