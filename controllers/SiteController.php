@@ -179,7 +179,7 @@ class SiteController extends Controller
          
             Yii::$app->mailer->compose()
                  ->setFrom('ming@smarthomecabling.com')
-                 ->setTo('kenin.qiu@gmail.com')
+                 ->setTo('sales@foresight-cctv.com')
                  ->setReplyTo($model['email'])
                  ->setSubject('Quote from smarthomecabling.com')
                  ->setHtmlBody($body)
