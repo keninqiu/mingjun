@@ -161,6 +161,29 @@ class SiteController extends Controller
     {
         $model = new Quote();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+
+            $body = '';
+            $body .= 'subject:'.$model['subject'].'<br>';
+            $body .= 'message:'.$model['message'].'<br>';
+            $body .= 'name:'.$model['name'].'<br>';
+            $body .= 'company:'.$model['company'].'<br>';
+            $body .= 'address:'.$model['address'].'<br>';
+            $body .= 'city:'.$model['city'].'<br>';
+            $body .= 'province:'.$model['province'].'<br>';
+            $body .= 'postal:'.$model['postal'].'<br>';
+            $body .= 'country:'.$model['country'].'<br>';
+            $body .= 'phone:'.$model['phone'].'<br>';
+            $body .= 'fax:'.$model['fax'].'<br>';
+            $body .= 'email:'.$model['email'].'<br>';
+            $body .= 'type:'.$model['type'].'<br>';
+         
+            Yii::$app->mailer->compose()
+                 ->setFrom('ming@smarthomecabling.com')
+                 ->setTo('kenin.qiu@gmail.com')
+                 ->setReplyTo($model['email'])
+                 ->setSubject('Quote from smarthomecabling.com')
+                 ->setHtmlBody($body)
+                 ->send();            
             return $this->redirect(['quote-success', 'id' => $model->id]);
         }
         return $this->render('quote-fail', [

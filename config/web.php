@@ -2,7 +2,7 @@
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
-
+$custom_config = require __DIR__ . '/config.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
@@ -49,7 +49,22 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'useFileTransport' => false,
+             'transport' => [
+                 'class' => 'Swift_SmtpTransport',
+                 'host' => $custom_config['SMTP_SERVER'],  // e.g. smtp.mandrillapp.com or smtp.gmail.com
+                 'username' => $custom_config['USERNAME'],
+                 'password' => $custom_config['PASSWORD'],
+                 'port' => $custom_config['SMTP_PORT'], // Port 25 is a very common port too
+                 'encryption' => 'ssl', // It is often used, check your provider or mail server specs
+                 'streamOptions' => [ 
+                    'ssl' => [ 
+                        'allow_self_signed' => true,
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                    ],
+                  ]                 
+             ],            
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

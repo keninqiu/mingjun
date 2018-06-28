@@ -31,3 +31,4 @@ tests/_support/_generated
 
 /config/db.php
 /doc/secret.txt
+/config/config.php

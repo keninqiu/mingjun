@@ -297,7 +297,7 @@ $this->params["settings"] = $settings;
     <input type="text" class="form-control" id="phone" name="Quote[phone]" placeholder="">
   </div>    
   <div class="form-group">
-    <label for="exampleInputEmail1"><span class="txtImportant">*</span> FAX:</label>
+    <label for="exampleInputEmail1"><span class="txtImportant"></span> FAX:</label>
     <input type="text" class="form-control" id="fax" name="Quote[fax]" placeholder="">
   </div>  
   <div class="form-group">
@@ -401,13 +401,6 @@ function check()
     {
       alert("Please input your TEL!");
       $('#phone').focus();
-      return (false);
-    }
-
-  if ($('#fax').val() == "")
-    {
-      alert("Please input your FAX!");
-      $('#fax').focus();
       return (false);
     }
   
