@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "product".
@@ -26,6 +27,14 @@ use Yii;
 class Product extends \yii\db\ActiveRecord
 {
     /**
+     * @var UploadedFile
+     */
+    public $imageFile;
+    /**
+     * @var UploadedFile
+     */    
+    public $documentFile;
+    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -43,8 +52,41 @@ class Product extends \yii\db\ActiveRecord
             [['name'], 'required'],
             [['specifications','features', 'detail','description','intro','title','meta_keywords','meta_description'], 'string'],
             [['name'], 'string', 'max' => 50],
-            [['link', 'image', 'document'], 'string', 'max' => 200]
+            [['link', 'image', 'document'], 'string', 'max' => 200],
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
+            [['documentFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, pdf, doc, docx']
         ];
+    }
+
+    public function upload()
+    {
+        if ($this->validate()) {
+            if($this->imageFile) {
+                $imageFileName = 'uploads/' . $this->imageFile->baseName . '.' . $this->imageFile->extension;
+                $this->image = '/'.$imageFileName;
+            }
+            
+            if($this->documentFile) {
+                $documentFile = 'uploads/' . $this->documentFile->baseName . '.' . $this->documentFile->extension;
+                $this->document = '/'.$documentFile;                    
+            }
+ 
+            $this->link = '';       
+            if($this->save()) {
+                if($this->imageFile) {
+                    $this->imageFile->saveAs($imageFileName);
+                }
+                if($this->documentFile) {
+                    $this->documentFile->saveAs($documentFile);
+                }
+                return true;
+            }
+            else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 
     /**

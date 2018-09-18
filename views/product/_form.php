@@ -32,19 +32,25 @@ $categoryList = ArrayHelper::map($categories, 'id', 'name');
 
     <?= $form->field($model, 'detail')->textarea(['rows' => '6']) ?>
 
-    <?= $form->field($model, 'image')->fileInput() ?>
-
-    <?= $form->field($model, 'document')->fileInput() ?>
-    <!--
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
-    
-    <?= $form->field($model, 'document')->textInput(['maxlength' => true]) ?>
-    -->
-    <?= $form->field($model, 'new')->textInput(['maxlength' => true]) ?>
-
+    <?= $form->field($model, 'imageFile')->fileInput() ?>
+    <?php 
+    if($model->image) {
+        echo '<img src="'.$model->image.'"/>';
+    }
+    ?>
+    <?= $form->field($model, 'documentFile')->fileInput() ?>
+    <?php 
+    if($model->document) {
+        echo '<a href="'.$model->document.'" download>download</a>';
+    }
+    ?>
+    <?php
+        echo $form->field($model, 'new')->dropDownList(['1' => 'Yes', '0' => 'No']);
+    ?>
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>    
+
     <br/>
     <br/>
     <br/>
