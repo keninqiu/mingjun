@@ -5,6 +5,7 @@ $db = require __DIR__ . '/db.php';
 $custom_config = require __DIR__ . '/config.php';
 $config = [
     'id' => 'basic',
+    'language' => 'en_US',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
