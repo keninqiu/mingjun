@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = "FORESIGHT CCTV - Prefessional Manufacturer and Supplier of CCTV Cameras, Lenses, UTP Video Baluns , Ground loop isolator,video distributors and amplifiers, camera Housing and..!";
+$this->title = $addedToTitle." - FORESIGHT CCTV - Prefessional Manufacturer and Supplier of CCTV Cameras, Lenses, UTP Video Baluns , Ground loop isolator,video distributors and amplifiers, camera Housing and..!";
 $this->registerMetaTag([
     'name' => 'description',
     'content' => "Manufacturer and wholesale CCTV importer,distributor and supplier of FORESIGHT Branded high quality craftsmanship CCTV Camera,Glass Camera Lenses,UTP video transceiver,UTP balun,housing,CCTV Surveillance Products. Competitive price. We offer OEM's."

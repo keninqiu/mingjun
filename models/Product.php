@@ -53,8 +53,8 @@ class Product extends \yii\db\ActiveRecord
             [['specifications','features', 'detail','description','intro','title','meta_keywords','meta_description'], 'string'],
             [['name'], 'string', 'max' => 50],
             [['link', 'image', 'document'], 'string', 'max' => 200],
-            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
-            [['documentFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, pdf, doc, docx']
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg', 'maxSize' => 1024 * 1024 * 10],
+            [['documentFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, pdf, doc, docx', 'maxSize' => 1024 * 1024 * 10]
         ];
     }
 

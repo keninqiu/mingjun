@@ -76,6 +76,7 @@ class SiteController extends Controller
     }
 
     public function actionSearch() {
+        $addedToTitle = '';
         $dbUtil = new DatabaseUtil();
         $settingArray = $dbUtil->getSettings();
         $categories = $dbUtil->getCategories();
@@ -87,6 +88,7 @@ class SiteController extends Controller
         if($category_id) {
             $condArray["category_id"] = $category_id;    
             $expandedCategory = $dbUtil->getCategory($category_id); 
+            $addedToTitle = $expandedCategory["name"];
             $expanded_category_id = $expandedCategory["parent_id"];     
         }
         if($text) {
@@ -97,6 +99,7 @@ class SiteController extends Controller
         return $this->render('search',[
             'categories' => $categories,
             'products' => $products,
+            'addedToTitle' => $addedToTitle,
             'settings' => $settingArray,
             'expanded_category_id' => $expanded_category_id
         ]);
