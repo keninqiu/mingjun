@@ -456,6 +456,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+
 #primary-menu {
     text-align: center;
 }
@@ -635,9 +636,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 
 #primary-menu ul ul > li.sub-menu > a, #primary-menu ul ul > li.sub-menu:hover > a {
-    background-image: url(images/icons/submenu.png);
+    background-image: url(submenu.png);
     background-position: right center;
     background-repeat: no-repeat;
+}
+
+#primary-menu ul ul ul {
+    top: 0;
+    left: 201px !important;
 }
 /*
 form {
