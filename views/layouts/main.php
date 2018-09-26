@@ -55,7 +55,9 @@ $categories = $dbUtil->getCategories();
 
 <div class="container">
   <div id="logo">
-    <a href="/" class="retina-logo"><img src="/IA/06/logo_en.gif"></a>  
+    <a href="/" class="retina-logo"><img src="/img/logo.jpeg"></a>  
+    <img  src="/img/facebook.svg" alt="facebook"/>
+    <img  src="/img/twitter.svg" alt="facebook"/>
   </div>
 </div>
 
