@@ -21,6 +21,29 @@ class DatabaseUtil
         return $needle === "" || (($temp = strlen($haystack) - strlen($needle)) >= 0 && strpos($haystack, $needle, $temp) !== false);
     }
 
+    function genProductsMenu($categories) {
+
+
+        if(isset($categories)) {
+          foreach($categories as $category) {
+
+                echo '<li class="sub-menu">';
+                echo '<a href="/site/search?category_id='.$category["id"].'" title="'.$category["name"].'">'.$category["name"].'</a>';
+
+            if($category["children"]) {
+                  echo '<ul class="sf-js-enabled sub-menuitem">';
+                  self::genProductsMenu($category["children"]);
+                  echo '</ul>';
+            
+            }
+                  
+                echo '</li>';        
+           
+          }
+        }
+    }
+
+
     public function loadSolution() {
         $client = new Client();
         $link = $this->baseUrl . "/supplier_technology.html";
