@@ -469,7 +469,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-    width: 1000px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
 }
@@ -602,7 +602,27 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding-bottom: 15px;
 }
 
-
+#mobile-menu {
+    display: none;
+}
+@media screen and (max-width: 979px) {
+    #mobile-menu {
+        display: block;
+        width: 100%;
+        font-size: 13px;
+        min-height: inherit !important;
+        margin-top: 10px;
+        margin-bottom: 10px;    
+        margin-right: 10px;   
+        margin-left: 10px;  
+    } 
+    #mobile-menu select{
+        width: 400px;
+    }
+    #primary-menu {
+        display: none;
+    }  
+}
 /*
 form {
     margin: 0;

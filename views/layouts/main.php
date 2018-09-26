@@ -14,6 +14,7 @@ use app\services\DatabaseUtil;
 AppAsset::register($this);
 $dbUtil = new DatabaseUtil();
 $categories = $dbUtil->getCategories();
+$currentUrl = Yii::$app->request->url;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -61,9 +62,22 @@ $categories = $dbUtil->getCategories();
   </div>
 </div>
 
-
-
-
+<div id="mobile-menu">
+    <select id="select-menu">
+      <option value="#" <?php echo $currentUrl=="#"?"selected":""?>>Go to Page...</option>
+      <option value="/" <?php echo $currentUrl=="/"?"selected":""?>>&nbsp;Home</option>
+      <option value="/site/search" <?php echo $currentUrl=="/site/search"?"selected":""?>>&nbsp;Products</option>
+<?php 
+      $prefixString = "&nbsp;–&nbsp;";
+      $dbUtil->genMobileProductsMenu($currentUrl,$prefixString,$categories);
+?>    
+      <option value="/solution.htm" <?php echo $currentUrl=="/solution.htm"?"selected":""?>>&nbsp;Solutions</option>
+      <option value="/supplier_news.htm" <?php echo $currentUrl=="/supplier_news.htm"?"selected":""?>>&nbsp;News and Press Release</option>
+      <option value="/faq.htm" <?php echo $currentUrl=="/faq.htm"?"selected":""?>>&nbsp;FAQ</option>
+      <option value="/site/about" <?php echo $currentUrl=="/site/about"?"selected":""?>>&nbsp;About</option>
+      <option value="/supplier_contact.htm" <?php echo $currentUrl=="/supplier_contact.htm"?"selected":""?>>&nbsp;Contact Us</option>
+    </select>  
+</div>
 
 <div id="primary-menu">
 	<div class="container clearfix">
@@ -83,6 +97,8 @@ $categories = $dbUtil->getCategories();
       <li><a href="/site/about" title="About">About</a></li>
       <li><a href="/supplier_contact.htm" title="Contact Us">Contact Us</a></li>
     </ul>
+
+  
   </div>
 </div>
 

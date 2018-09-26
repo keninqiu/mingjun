@@ -21,6 +21,21 @@ class DatabaseUtil
         return $needle === "" || (($temp = strlen($haystack) - strlen($needle)) >= 0 && strpos($haystack, $needle, $temp) !== false);
     }
 
+    function genMobileProductsMenu($currentUrl,$prefixString,$categories) {
+        if(isset($categories)) {
+            foreach($categories as $category) {
+                $url = "/site/search?category_id=".$category["id"];
+                echo '<option value="'.$url.'"';
+                if($url == $currentUrl) {
+                    echo "selected";
+                }
+                echo '>'.$prefixString.'&nbsp;'.$category["name"].'</option>';
+                if($category["children"]) {
+                    self::genMobileProductsMenu($currentUrl,$prefixString.$prefixString,$category["children"]);
+                }
+            }
+        }
+    }
     function genProductsMenu($categories) {
 
 
