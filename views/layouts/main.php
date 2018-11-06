@@ -57,8 +57,10 @@ $currentUrl = Yii::$app->request->url;
 <div class="container">
   <div id="logo">
     <a href="/" class="retina-logo"><img src="/img/logo.jpeg"></a>  
-    <img  src="/img/facebook.svg" alt="facebook"/>
-    <img  src="/img/twitter.svg" alt="facebook"/>
+    <img  src="/img/facebook.svg" class="social-icon" alt="facebook"/>
+    <img  src="/img/twitter.svg" class="social-icon" alt="twitter"/>
+    <img  src="/img/linkedin.svg" class="social-icon" alt="linkedin"/>
+    <img  src="/img/instagram.svg" class="social-icon" alt="instagram"/>
   </div>
 </div>
 

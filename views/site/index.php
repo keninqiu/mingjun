@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 use yii\helpers\Html;
-$this->title = 'CCTV';
+$this->title = 'Video Balun, Surge Protector, Video Distributor Amplifier, CAT5 VGA, Twisted Pair Transmission - FORESIGHT CCTV INC.';
 $this->params["settings"] = $settings;
 ?>
 

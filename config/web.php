@@ -36,8 +36,8 @@ $config = [
                 'solution.htm' => '/site/solution',  
                 'supplier_contact.htm' => '/site/quote',
                 'faq.htm' => '/site/faq',                
-                '<name:(\w|-)+>.htm' => '/site/product',
-                '<name:(\w|-)+>.html' => '/site/product',
+                '<name:>.htm' => '/site/product',
+                '<name:>.html' => '/site/product',
             ],
         ],  
         /*      

@@ -1,6 +1,6 @@
 <?php
 use yii\widgets\Breadcrumbs;
-$this->title = $details["product"]["title"];
+$this->title = $details["product"]["title"]. " ".$details["product"]["description"];
 $this->registerMetaTag([
     'name' => 'description',
     'content' => $details["product"]["meta_description"]

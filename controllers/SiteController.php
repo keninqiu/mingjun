@@ -109,7 +109,8 @@ class SiteController extends Controller
         $dbUtil = new DatabaseUtil();
         $settingArray = $dbUtil->getSettings();
         $request = Yii::$app->request;
-        $product_name = $request->get('name');   
+        $product_name = urldecode($request->get('name'));  
+        
         $details = $dbUtil->getProductDetails($product_name);   
         $similar_products = $dbUtil->getSimilar($product_name);
         $product = $details["product"];
@@ -117,7 +118,8 @@ class SiteController extends Controller
             'details' => $details,
             'similar_products' => $similar_products,
             'settings' => $settingArray
-        ]);      
+        ]);    
+         
     }
 
     public function actionNews() {
