@@ -17,6 +17,7 @@ class SiteController extends Controller
     /**
      * @inheritdoc
      */
+    public $verifyCode;
     public function behaviors()
     {
         return [
@@ -29,6 +30,7 @@ class SiteController extends Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+
                 ],
             ],
             'verbs' => [
@@ -164,7 +166,15 @@ class SiteController extends Controller
 
     public function actionQuoteCreate()
     {
+        $verifycode = \Yii::$app->request->post('captcha');
+        $verifycode2 = $this->createAction("captcha")->getVerifyCode(false);   
         $model = new Quote();
+        if($verifycode != $verifycode2){
+            return $this->render('quote-fail', [
+                'model' => $model,
+            ]); 
+        }     
+        
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
             $body = '';

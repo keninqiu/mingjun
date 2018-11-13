@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use yii\captcha\Captcha;
 
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
@@ -15,7 +16,7 @@ $this->params["settings"] = $settings;
 		</div>
 		</div>
 		<div class="content-wrap">
-<div class="container clearfix">
+<div class="container clearfix submit-form">
 <h3><span class="txtImportant">*</span> indicates required fields.</h3>
 <form action="/site/quote-create" method="POST" onsubmit="return check()">
   <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
@@ -350,7 +351,16 @@ $this->params["settings"] = $settings;
       </label>
     </div>          
   </div>  
-  <button type="submit" class="btn btn-primary" >Submit</button>
+  <div>
+    <?php 
+      echo Captcha::widget([
+          'name' => 'captcha',
+      ]);    
+    ?>
+  </div>
+  <div class="submit-button">
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </div>
 </form>
 <script>
 
