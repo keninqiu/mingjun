@@ -29,7 +29,7 @@ class DatabaseUtil
                 if($url == $currentUrl) {
                     echo "selected";
                 }
-                echo '>'.$prefixString.'&nbsp;'.$category["name"].'</option>';
+                echo '>'.$prefixString.'&nbsp;'.substr($category["name"],0,45).'</option>';
                 if($category["children"]) {
                     self::genMobileProductsMenu($currentUrl,$prefixString.$prefixString,$category["children"]);
                 }
