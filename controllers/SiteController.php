@@ -23,14 +23,22 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'only' => ['logout','captcha'],
                 'rules' => [
                     [
                         'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
+                    [
 
+                        'actions' => ['captcha'],
+
+                        'allow' => true,
+
+                        'roles' => ['?', '@'],
+
+                    ],
                 ],
             ],
             'verbs' => [
@@ -194,11 +202,27 @@ class SiteController extends Controller
          
             Yii::$app->mailer->compose()
                  ->setFrom('ming@smarthomecabling.com')
-                 ->setTo('sales@foresight-cctv.com')
+                 ->setTo('miri.qiu@gmail.com')
                  ->setReplyTo($model['email'])
                  ->setSubject('Quote from smarthomecabling.com')
                  ->setHtmlBody($body)
-                 ->send();            
+                 ->send();   
+            if(trim($model['company'])!="google") {
+                Yii::$app->mailer->compose()
+                     ->setFrom('ming@smarthomecabling.com')
+                     ->setTo('kenin.qiu@gmail.com')
+                     ->setReplyTo($model['email'])
+                     ->setSubject('Quote from smarthomecabling.com')
+                     ->setHtmlBody($body)
+                     ->send();  
+                Yii::$app->mailer->compose()
+                     ->setFrom('ming@smarthomecabling.com')
+                     ->setTo('sales@foresight-cctv.com')
+                     ->setReplyTo($model['email'])
+                     ->setSubject('Quote from smarthomecabling.com')
+                     ->setHtmlBody($body)
+                     ->send();                                        
+            }          
             return $this->redirect(['quote-success', 'id' => $model->id]);
         }
         return $this->render('quote-fail', [

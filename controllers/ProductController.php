@@ -10,7 +10,9 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\services\DatabaseUtil;
 use yii\web\UploadedFile;
-
+use yii2tech\csvgrid\CsvGrid;
+use yii\data\ArrayDataProvider;
+use yii\data\ActiveDataProvider;
 /**
  * ProductController implements the CRUD actions for Product model.
  */
@@ -78,6 +80,17 @@ class ProductController extends Controller
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
+    }
+
+    public function actionExport() {
+        
+        $exporter = new CsvGrid([
+            'dataProvider' => new ActiveDataProvider([
+                'query' => Product::find(),
+            ]),
+        ]);
+        return $exporter->export()->send('products.csv'); 
+           
     }
 
     public function actionReload($id) {
