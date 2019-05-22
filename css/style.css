@@ -1,3 +1,6 @@
+.company-footer a,.company-footer strong {
+    color: white;
+}
 #sidebar {
     min-width: 130px;
 }
@@ -607,14 +610,14 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 @media screen and (max-width: 979px) {
     #mobile-menu {
-        display: block;
+        display: inline-block;
         width: 100%;
         font-size: 13px;
         min-height: inherit !important;
         margin-top: 10px;
         margin-bottom: 10px;    
-        margin-right: 10px;   
-        margin-left: 10px;  
+        text-align: center;
+
     } 
     #mobile-menu select{
         width: 300px;

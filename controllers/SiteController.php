@@ -119,9 +119,16 @@ class SiteController extends Controller
         $dbUtil = new DatabaseUtil();
         $settingArray = $dbUtil->getSettings();
         $request = Yii::$app->request;
+
         $product_name = urldecode($request->get('name'));  
-        
-        $details = $dbUtil->getProductDetails($product_name);   
+        $details = $dbUtil->getProductDetails($product_name); 
+        if(!$details) {
+            $product_name = str_replace('|', '/', $product_name);
+            //echo $product_name;
+            $details = $dbUtil->getProductDetails($product_name); 
+        }
+
+          
         $similar_products = $dbUtil->getSimilar($product_name);
         $product = $details["product"];
         return $this->render('product',[

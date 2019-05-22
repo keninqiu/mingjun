@@ -1,0 +1,125 @@
+.main-slider .text-area h3{
+	color:white !important
+}
+
+.history-section {
+    padding-bottom: 0px;
+}
+.history-area {
+    margin-bottom: 0px;
+    
+}
+
+body.kc-css-system .kc-css-70012 {
+    margin-bottom: 0px !important;
+}
+
+ul#menu-main-2.menu{
+	font-size :13px ;
+}
+
+.main-menu .navigation > li > ul {
+	    background: #ffffffbd;
+}
+
+.search-box .form-group button {
+    left: 200px;
+}
+
+.team-item-one .team-text {
+
+    transform: none !important;
+}
+
+.team-item-one {
+
+    background: none !important;
+}
+
+footer .menu-item-646 .sub-menu{
+	display: none;
+}
+
+footer .menu-item-903 .sub-menu{
+	display: none;
+}
+
+footer .menu-item-1957 .sub-menu{
+	display: none;
+}
+
+footer .menu-item-1951 .sub-menu{
+	display: none;
+}
+.blog-item-one h3 a{
+
+}
+
+.my-feature-box i:before {
+    font-size: 34px;
+    line-height: 45px;
+    color: #ff6e6e;
+}
+
+.my-feature-box {
+	padding-left:15px;
+	padding-top:15px;
+}
+
+div.owl-stage div.owl-item div.img-box{
+	height:250px;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;	
+}
+
+div.owl-stage div.owl-item div.img-box img{
+	vertical-align:middle;
+	display:inline-block;	
+}
+div.team-item div.image {
+	border-radius: 50%;
+	width:134px;
+	height:165px;
+}
+
+.awsm-contact-info span {
+	font-size:12px!important;
+}
+video {
+	width:100%!important;
+}
+@media only screen and (min-width: 768px) {
+	.video-zh .row-1 {
+		padding-top:20px;
+	}
+	.video-zh .row-1 div.content-desc {
+		height:150px!important;
+	}
+	.video-en .row-1 div.content-desc {
+		height:90px!important;
+	}	
+	.show-for-mobile {
+		display:none;
+	}
+
+}
+
+@media only screen and (max-width: 767px) {
+	.home-what-we-do {
+		display:none;
+	}
+	.services-section {
+		margin:0!important;
+	}	
+}
+div.service-item-one {
+	width:95%!important;
+}
+.sub-project div.sec-title-two h2{
+	visibility: hidden;
+}
+img.thumbnail-logo {
+	width:150px;
+	height:150px;
+}

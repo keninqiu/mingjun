@@ -31,6 +31,18 @@ echo Breadcrumbs::widget([
 ?>
 </div>
 <div class="row">
+  <div style="width: 300px;padding-left: 30px;">
+              <form action="/site/search">
+                  <div class="input-group">
+                     <input type="text" class="form-control"  name="text" placeholder="" id="search">
+                     <span class="input-group-btn">
+                          <button class="btn btn-default" type="submit">Search</button>
+                     </span>
+                  </div>
+              </form>  
+  </div>
+</div>
+<div class="row">
     <div class="col-md-4">
     	<img class="img-responsive" src="<?php echo $details["product"]["image"]?>" alt="product image">
     </div>

@@ -88,13 +88,16 @@ $this->params["settings"] = $settings;
               <div class="row card-set">  
                 <?php
                     }
+                    $product_name = str_replace('/', '|', $product["name"]);
+                    $product_name = urlencode($product_name);
+                    echo $product_name;
                 ?>
                 <div class="col-md-card card">
-                    <a href="/<?=$product["name"]?>.html">
+                    <a href="/<?=$product_name?>.htm">
                         <img class="card-img-top" src="<?=$product["image"]?>" alt="Card image cap">
                     </a>
                   <div class="card-block">
-                    <div><h4 class="card-title"><a href="/<?=urlencode($product["name"])?>.htm"><?=$product["name"]?></a></h4></div>
+                    <div><h4 class="card-title"><a href="/<?=$product_name?>.htm"><?=$product["name"]?></a></h4></div>
                     <div class="card-text"><?=$product["description"]?></div>
 
                     <div class="card-footer"></div>

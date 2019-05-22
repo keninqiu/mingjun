@@ -29,7 +29,7 @@ class DatabaseUtil
                 if($url == $currentUrl) {
                     echo "selected";
                 }
-                echo '>'.$prefixString.'&nbsp;'.substr($category["name"],0,45).'</option>';
+                echo '>'.$prefixString.'&nbsp;'.substr($category["name"],0,40).'</option>';
                 if($category["children"]) {
                     self::genMobileProductsMenu($currentUrl,$prefixString.$prefixString,$category["children"]);
                 }
@@ -134,6 +134,9 @@ class DatabaseUtil
     public function getProductDetails($name) {
 
         $product = Product::find()->where(["name" => $name])->one();
+        if(!$product) {
+            return null;
+        }
         $category_id = $product["category_id"];
         $category = Category::find()->where(["id" => $category_id])->one();
         $ret = [
