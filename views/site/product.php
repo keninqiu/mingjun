@@ -95,12 +95,18 @@ echo Breadcrumbs::widget([
 			  <div id="specifications" class="tab-pane fade in active">
 		    		<ul class="list-group">
 		    			<?php 
-		    			
-		    			foreach($specifications as $spec) {
-		    			?>
-		    			<li class="list-group-item"><?= $spec?></li>
-		    			<?php		
-		    			}
+		    			if(is_array($specifications)) {
+  		    			foreach($specifications as $spec) {
+  		    			?>
+  		    			<li class="list-group-item"><?= $spec?></li>
+  		    			<?php		
+  		    			}
+              }
+              else {
+                ?>
+                <li class="list-group-item"><?= $specifications?></li>
+                <?php
+              }
 		    			?>
 		    		</ul>
 			  </div>
@@ -133,28 +139,31 @@ echo Breadcrumbs::widget([
   <table class="table table-hover table-condensed">
 				<?php
 					$detail = json_decode($details["product"]["detail"],true);
-					if($detail && count($detail) > 0) {
-				?>  	
-    <thead>
-      <tr>
-        <th class="col-md-6"><?=$detail[0]['field']?></th>
-        <th class="col-md-6"><?=$detail[0]['value']?></th>
-      </tr>
-    </thead>
-    <tbody>
-    			<?php
-    					for($i=1;$i<count($detail);$i++) {
-    			?>
+					if($detail && is_array($detail) && count($detail) > 0) {
 
-      <tr>
-        <td><?=$detail[$i]['field']?></td>
-        <td><?=$detail[$i]['value']?></td>
-      </tr>
+  				?>  
+      <thead>
+        <tr>
+          <th class="col-md-6"><?=$detail[0]['field']?></th>
+          <th class="col-md-6"><?=$detail[0]['value']?></th>
+        </tr>
+      </thead>
+      <tbody>
       			<?php
-      					}
+      					for($i=1;$i<count($detail);$i++) {
       			?>
-    </tbody>
-    			<?php
+
+        <tr>
+          <td><?=$detail[$i]['field']?></td>
+          <td><?=$detail[$i]['value']?></td>
+        </tr>
+
+      </tbody>
+      			<?php
+              }
+            }
+              else {
+              echo $details["product"]["detail"];
     				}
     			?>
   </table>
