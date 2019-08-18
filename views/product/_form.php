@@ -23,9 +23,9 @@ $categoryList = ArrayHelper::map($categories, 'id', 'name');
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'intro')->textarea(['rows' => '6']) ?>
-<!--
-    <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
--->
+
+    <?= $form->field($model, 'features')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'description')->textarea(['rows' => '6']) ?>
 
     <?= $form->field($model, 'specifications')->textarea(['rows' => '6'])?>

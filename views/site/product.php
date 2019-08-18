@@ -63,76 +63,106 @@ echo Breadcrumbs::widget([
 
 
 		<div class="row">
+
 			<ul class="nav nav-tabs">
-				<li><a data-toggle="tab" href="#intro">Introduction</a></li>
+
+				<li class="active"><a data-toggle="tab" href="#intro">Introduction</a></li>
+
 			  <?php 
 			  	$specifications = json_decode($details["product"]["specifications"],true);
-			  	if($specifications) {
+			  	if($details["product"]["specifications"] || $specifications) {
 			  ?>
-			  <li class="active"><a data-toggle="tab" href="#specifications">Specifications</a></li>
+			  <li><a data-toggle="tab" href="#specifications">Specifications</a></li>
 			  
 			  <?php
 			  	}
 			  ?>
+
 			  <?php 
 			  	$intro = $details["product"]["intro"];
 			  	$features = $details["product"]["features"];
 			  	$features = json_decode($features);
-			  	if($features) {
+			  	if($features || $details["product"]["features"]) {
 			  ?>
 			  
 			  <li><a data-toggle="tab" href="#features">Features</a></li>
 			  <?php
 			  	} 
 			  ?>
+
 			  <li><a data-toggle="tab" href="#detail">Detail</a></li>
+
 			</ul>
 
 			<div class="tab-content">
-			  <?php 
-			  if($specifications) {
-			  ?>
-			  <div id="specifications" class="tab-pane fade in active">
-		    		<ul class="list-group">
-		    			<?php 
-		    			if(is_array($specifications)) {
-  		    			foreach($specifications as $spec) {
-  		    			?>
-  		    			<li class="list-group-item"><?= $spec?></li>
-  		    			<?php		
-  		    			}
-              }
-              else {
+
+
+        <div id="intro" class="tab-pane fade in active">
+          <pre><?= $intro?></pre>
+        </div>
+
+        <div id="features" class="tab-pane fade in">
+        <?php
+        if($features) {
+        ?>
+          <ul class="list-group">
+          <?php 
+            foreach($features as $feature) {
+          ?>
+            <li class="list-group-item"><?= $feature?></li>
+          <?php
+            }
+          ?>
+        </ul>
+        <?php
+        }
+        else {
+        ?>
+        <pre><?= $details["product"]["features"]?></pre>
+        <?php  
+        }
+        ?>        
+        </div>
+
+
+        <?php 
+        if($details["product"]["specifications"] || $specifications) {
+        ?>
+
+        <div id="specifications" class="tab-pane fade in">
+
+          <?php 
+          if($specifications) {
+          ?>
+
+            <ul class="list-group">
+          <?php
+                foreach($specifications as $spec) {
                 ?>
-                <li class="list-group-item"><?= $specifications?></li>
-                <?php
-              }
-		    			?>
-		    		</ul>
-			  </div>
-			  <?php
-			  }
-			  ?>
-			  <div id="intro" class="tab-pane fade in active">
-			  	<?= $intro?>
-			  </div>
-			  <?php
-			  if($features) {
-			  ?>
-			  <div id="features" class="tab-pane fade in active">
-			  	<ul class="list-group">
-			    <?php 
-			    	foreach($features as $feature) {
-			    ?>
-			    	<li class="list-group-item"><?= $feature?></li>
-			    <?php
-			    	}
-			    ?>
-				</ul>
-			  </div>
-			  <?php
-			  }
-			  ?>
+                <li class="list-group-item"><?= $spec?></li>
+                <?php   
+                }
+          ?>
+            </ul>
+
+          <?php
+          }
+          else {
+          ?>
+          <pre><?= $details["product"]["specifications"]?></pre>
+          <?php
+          }  
+          ?>
+
+        </div>
+
+        <?php
+        }
+        ?>
+
+
+
+
 			  <div id="detail" class="tab-pane fade">
 
 
@@ -163,7 +193,7 @@ echo Breadcrumbs::widget([
               }
             }
               else {
-              echo $details["product"]["detail"];
+              echo '<pre>'.$details["product"]["detail"].'</pre>';
     				}
     			?>
   </table>

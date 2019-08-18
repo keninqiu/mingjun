@@ -1,3 +1,9 @@
+pre {
+    background-color:white!important;
+}
+div#intro {
+    padding-top: 10px;
+}
 .company-footer a,.company-footer strong {
     color: white;
 }
