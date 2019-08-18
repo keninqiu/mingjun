@@ -29,7 +29,7 @@ class Post extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['title'], 'string', 'max' => 500],
-            [['content'], 'string', 'max' => 10000],
+            [['content'], 'string'],
         ];
     }
 

@@ -5,6 +5,7 @@ CREATE TABLE post (
      PRIMARY KEY (id)
 );
 
+alter table post modify column content LONGTEXT;
 drop table category;
 drop table product;
 CREATE TABLE category (

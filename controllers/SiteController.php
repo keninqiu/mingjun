@@ -78,9 +78,11 @@ class SiteController extends Controller
         $condArray = [];
         $condArray["new"] = 1;  
         $products = $dbUtil->getProducts($condArray);
+        $posts = $dbUtil->getPosts();
         $settingArray = $dbUtil->getSettings();
         return $this->render('index',[
             'products' => $products,
+            'posts' => $posts,
             'settings' => $settingArray
         ]);
     }

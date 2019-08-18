@@ -7,7 +7,14 @@ $this->params["settings"] = $settings;
 ?>
 
 
+<style>
+marquee p {
+  border-top: 1px solid grey;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 
+</style>
 <div class="row">
       <div class="col-md-8 col-spanning-1">
           <h1><?php echo $settings["COMPANY_NAME"]?></h1>
@@ -84,26 +91,43 @@ $this->params["settings"] = $settings;
                 <h3>New Products Release</h3>
             </div>
             <div class="row">
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <td><a href="/supplier_news.htm#news19">2018 APR New Product Release</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="/supplier_news.htm#news18">ISC WEST 2018</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="/supplier_news.htm#news17">InfoComm CHINA 2018</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="/supplier_news.htm#news16">4K HDMI over IP</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="/supplier_news.htm#news15">Bluetooth Digital Amplifier</a></td>
-                  </tr>                                                                         
-                </tbody>
-              </table>               
+              <marquee behavior="scroll" height="150px" scrolldelay="100" vspace="10" direction="down" loop="-1" scrollamount="2" onMouseOut="this.start()" onMouseOver="this.stop()" >
+                <?php
+                  echo count($posts);
+                  foreach ($posts as &$post) {
+                ?>
+                  <p>
+                    <a href="/post/show?id=<?=$post['id']?>">
+                      <?=$post["title"]?>
+                    </a>  
+                  </p>                
+                <?php
+                  }
+                ?>
+                <p>
+                  <a href="/supplier_news.htm#news19">
+                    2018 APR New Product Release
+                  </a>
+                </p>
+                <p>
+                  <a href="/supplier_news.htm#news18">
+                    ISC WEST 2018
+                  </a>
+                </p>
+                <p>
+                  <a href="/supplier_news.htm#news17">
+                    InfoComm CHINA 2018
+                  </a>
+                </p>
+                <p>
+                  <a href="/supplier_news.htm#news16">4K HDMI over IP</a>
+                </p>
+                <p>
+                  <a href="/supplier_news.htm#news15">Bluetooth Digital Amplifier</a>
+                </p>             
+              </marquee>
             </div>
+
         </div>
       </div>
   </div>

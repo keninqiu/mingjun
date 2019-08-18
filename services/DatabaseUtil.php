@@ -6,6 +6,7 @@ use keltstr\simplehtmldom\SimpleHTMLDom as SHD;
 use app\models\Category;
 use app\models\Product;
 use app\models\Setting;
+use app\models\Post;
 
 class DatabaseUtil
 {
@@ -129,6 +130,11 @@ class DatabaseUtil
             $settingArray[$field] = $value;
         }
         return $settingArray;
+    }
+
+    public function getPosts() {
+        $posts = Post::find()->all();
+        return $posts;
     }
 
     public function getProductDetails($name) {

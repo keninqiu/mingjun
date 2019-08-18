@@ -57,6 +57,13 @@ class PostController extends Controller
         ]);
     }
 
+    public function actionShow($id)
+    {
+        return $this->render('show', [
+            'model' => $this->findModel($id),
+        ]);
+    }
+
     /**
      * Creates a new Post model.
      * If creation is successful, the browser will be redirected to the 'view' page.

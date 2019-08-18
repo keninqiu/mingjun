@@ -12,7 +12,8 @@
         "irc": "irc://irc.freenode.net/yii",
         "source": "https://github.com/yiisoft/yii2"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.5",
@@ -21,7 +22,9 @@
         "keltstr/yii2-simplehtmldom": "dev-master",
         "yiisoft/yii2-httpclient": "~2.0.0",
         "2amigos/yii2-ckeditor-widget" : "*",
-        "yii2tech/csv-grid": "^1.0"
+        "yii2tech/csv-grid": "^1.0",
+        "iutbay/yii2-kcfinder": "dev-master",
+        "bizley/quill": "^2.3"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
