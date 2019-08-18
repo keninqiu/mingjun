@@ -1,3 +1,10 @@
+CREATE TABLE post (
+     id INT(11) NOT NULL AUTO_INCREMENT,
+     title varchar(500) not null,
+     content varchar(10000),
+     PRIMARY KEY (id)
+);
+
 drop table category;
 drop table product;
 CREATE TABLE category (
