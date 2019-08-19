@@ -87,6 +87,16 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionPost($id) {
+        $dbUtil = new DatabaseUtil();
+        $post = $dbUtil->getPost($id);
+        $settingArray = $dbUtil->getSettings();
+        return $this->render('post', [
+            'model' => $post,
+            'settings' => $settingArray
+        ]);
+    }
+
     public function actionSearch() {
         $addedToTitle = '';
         $dbUtil = new DatabaseUtil();
@@ -143,9 +153,11 @@ class SiteController extends Controller
 
     public function actionNews() {
         $dbUtil = new DatabaseUtil();
+        $posts = $dbUtil->getPosts();
         $settingArray = $dbUtil->getSettings();
         return $this->render('news',[
-            'settings' => $settingArray
+            'settings' => $settingArray,
+            'posts' => $posts
         ]); 
     }
 

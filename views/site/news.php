@@ -18,6 +18,20 @@ $this->params["settings"] = $settings;
         <div class="container clearfix">
                 <div class="clear"></div>
                 <div class="col_full newspage">
+
+<?php 
+	foreach($posts as $post) {
+?>
+<br><div class="event">
+<div class="t"><?=$post['title']?></div>
+<div class="d"><?=$post['content']?>
+</div>
+</div>
+
+<?php
+	}
+?>
+
 <div class="event">
 <div class="t">2018 APR New Product Release</div>
 <div class="d"><p><strong><span style="color: #ff0000;">DP02U</span>&nbsp;<span style="color: #0000ff;">4K DisplayPort&nbsp;KVM with USB/RS232 CAT5e Extender</span></strong></p>
@@ -49,12 +63,7 @@ $this->params["settings"] = $settings;
 <p><a href="https://www.iscwest.com/Home/"><img src="http://www.iscwest.com/RNA/RNA_ISCWest_v2/2018/img/framework/ISCW-Logo.png?v=1515101352" alt="" width="200" height="115"></a></p>
 </div>
 </div>
-<br><div class="event">
-<div class="t">InfoComm CHINA 2018</div>
-<div class="d"><p><strong>2018/04/11-04/13</strong><br><strong>Hall: C, Booth #CE1-07</strong></p>
-<p><a href="http://www.infocomm-china.com/en/"><img src="http://www.infocomm-china.com/en/images/logo_.png" alt="" width="276" height="66"></a></p>
-</div>
-</div>
+
 <br><div class="event">
 <div class="t">4K HDMI over IP</div>
 <div class="d"><p><span style="color: #ff0000;"><strong>HKM01BT-4K&nbsp;&nbsp;<span style="color: #0000ff;">4K HDMI KVM over IP/Fiber - Transmitter </span></strong></span></p>
@@ -374,21 +383,8 @@ $(document).ready(function() {
 });
 
 </script>
-        <div class="tabs-container">
-<div class="idtabs-container" id="tab1"></div><div class="idtabs-container" id="tab2" style="display: none;">	<div class="tabs-frame-content">
-	<h6> Contact Detail </h6>
-	<table cellspacing="0" cellpadding="0" class="tbContact">
-	
-	
-<tbody><tr><td class="colContact">Address:</td><td>10F, No. 493, Chung-Cheng Rd., Hsin Tien Dist., New Taipei City 231, Taiwan</td></tr><tr><td class="colContact">TEL:</td><td>886-2-22186886 (Rep.)</td></tr><tr><td class="colContact">FAX:</td><td>886-2-22187989</td></tr><tr><td class="colContact">Email:</td><td>
-<a href="supplier_contact.htm">service@sct.com.tw</a><br>
-<a href="supplier_contact.htm">smart.cabling@msa.hinet.net</a><br>
-</td></tr>
 
-<tr><td class="colContact">URL:</td><td><a href="http://www.sct.com.tw" target="_top">http://www.sct.com.tw</a><br>
-</td></tr>
-<tr><td class="colContact">ZIP:</td><td>231</td></tr></tbody></table></div>        </div>
-        </div>
+
 </div>
 </div>
 </div>

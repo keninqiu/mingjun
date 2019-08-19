@@ -91,13 +91,12 @@ marquee p {
                 <h3>New Products Release</h3>
             </div>
             <div class="row">
-              <marquee behavior="scroll" height="150px" scrolldelay="100" vspace="10" direction="down" loop="-1" scrollamount="2" onMouseOut="this.start()" onMouseOver="this.stop()" >
+              <marquee behavior="scroll" height="150px" scrolldelay="100" vspace="10" direction="down" loop="-1" scrollamount="1" onMouseOut="this.start()" onMouseOver="this.stop()" >
                 <?php
-                  echo count($posts);
                   foreach ($posts as &$post) {
                 ?>
                   <p>
-                    <a href="/post/show?id=<?=$post['id']?>">
+                    <a href="/site/post?id=<?=$post['id']?>">
                       <?=$post["title"]?>
                     </a>  
                   </p>                

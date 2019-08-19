@@ -132,6 +132,10 @@ class DatabaseUtil
         return $settingArray;
     }
 
+    public function getPost($id) {
+        $post = Post::find()->where(["id" => $id])->one();;
+        return $post;        
+    }
     public function getPosts() {
         $posts = Post::find()->all();
         return $posts;

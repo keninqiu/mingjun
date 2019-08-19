@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 $this->title = $model->title;
+$this->params['breadcrumbs'][] = $this->title;
+$this->params["settings"] = $settings;
 ?>
 <style>
  .ql-align-center {

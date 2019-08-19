@@ -1,11 +1,10 @@
 CREATE TABLE post (
      id INT(11) NOT NULL AUTO_INCREMENT,
      title varchar(500) not null,
-     content varchar(10000),
+     content LONGTEXT,
      PRIMARY KEY (id)
 );
 
-alter table post modify column content LONGTEXT;
 drop table category;
 drop table product;
 CREATE TABLE category (
