@@ -64,7 +64,7 @@ $currentUrl = Yii::$app->request->url;
     <img  src="/img/twitter.svg" class="social-icon" alt="twitter"/>
     <img  src="/img/linkedin.svg" class="social-icon" alt="linkedin"/>
     <img  src="/img/instagram.svg" class="social-icon" alt="instagram"/>
-    <a href="https://images.app.goo.gl/HKmKpAhgqRR3YZLdA" target="_blank"><img src="/img/eCatalog.png" class="social-icon" alt="eCatalog"/></a>
+    <a href="http://www.foresightcctv.com/19/" target="_blank"><img src="/img/eCatalog.png" class="social-icon" alt="eCatalog"/></a>
   </div>
 </div>
 

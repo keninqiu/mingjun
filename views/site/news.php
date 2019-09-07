@@ -179,19 +179,7 @@ $this->params["settings"] = $settings;
 <p><a href="/HAE01.htm" target="_blank"><img src="http://www.shetech.com.tw/img/news/HAE01-L.jpg" height="526"></a></p>
 </div>
 </div>
-<br><div class="event">
-<div class="t">CPSE 2017</div>
-<div class="d"><p>&nbsp;</p>
-<p><strong>2017/10/29-11/01</strong><br><strong>Booth #6C5456</strong></p>
-<p><a href="http://www.cpse.com.cn/index.php?lang=en" target="_blank"><img src="http://www.shetech.com.tw/img/news/cpse.jpg" width="512" height="186"></a></p>
-</div>
-</div>
-<br><div class="event">
-<div class="t">GITEX 2017</div>
-<div class="d"><p><strong>2017/10/08-10/12</strong><br><strong>Booth #C3-31</strong></p>
-<p><a href="http://www.gitex.com/en/" target="_blank"><img src="http://www.shetech.com.tw/img/news/gitex.jpg" width="483" height="91"></a></p>
-</div>
-</div>
+
 <br><div class="event">
 <div class="t">2017 JUL new product release</div>
 <div class="d"><p><span style="color: #0000ff;"><a href="/HE02EIX.htm" target="_blank"><strong><span style="color: #ff0000;">HE02EIX</span> &nbsp;</strong></a><strong><a href="/HE02EIX.htm" target="_blank">4K 60Hz 4:4:4 HDMI with IR/RS232 CAT5e Extender 70M </a>&nbsp;</strong></span></p>
@@ -229,29 +217,8 @@ $this->params["settings"] = $settings;
 <p><img src="http://www.shetech.com.tw/img/news/Ultra%20High%20Power%2060W%2090W%20POE%20Solution_80x50.jpg" alt="" width="900" height="563"></p>
 </div>
 </div>
-<br><div class="event">
-<div class="t">CEDIA 2017</div>
-<div class="d"><p>&nbsp;</p>
-<div dir="ltr">
-<div style="font-size: 12pt; font-family: 'Microsoft JhengHei UI'; color: #000000;">
-<div dir="ltr">
-<div style="font-size: 12pt; font-family: 'Microsoft JhengHei UI'; color: #000000;">
-<div><strong>2017/09/05-09/09</strong><br><strong>Booth #1339</strong><img style="font-size: 12pt;" src="//insight.adsrvr.org/track/evnt/?adv=0hdwwem&amp;ct=0:jhngvd3&amp;fmt=3" alt="" width="0" height="0" border="0"></div>
-</div>
-</div>
-<form id="form1" action="./" method="post"><nav class="navbar navbar-inverse navbar-static-top custom-navbar">
-<div class="container">
-<div class="navbar-header col-md-4">
-<div class="hidden-xs">
-<div class="sfContentBlock"><a href="http://expo.cedia.net/home"><img title="cedia 2017_SanDiego_Sept5-9_web_344x121-01" src="http://expo.cedia.net/images/default-source/CEDIA-2017-Graphics/cedia-2017_sandiego_sept5-9_web_344x121-01.png?sfvrsn=0"></a></div>
-</div>
-</div>
-</div>
-</nav></form></div>
-</div>
-<p>&nbsp;</p>
-</div>
-</div>
+<br>
+
 <br><div class="event">
 <div class="t">2017 MAY new product release</div>
 <div class="d"><p><strong><span style="color: #ff0000;">AD001HD1 </span>&nbsp;<span style="color: #0000ff;">HD-TVI/AHD/HDCVI to CVBS Converter Built in Loop Out</span></strong></p>
@@ -265,12 +232,7 @@ $this->params["settings"] = $settings;
 <p><a href="/AD001HD1.htm"><strong><img src="http://www.shetech.com.tw/img/news/AD001HD1-L.jpg" width="900" height="191"></strong></a></p>
 </div>
 </div>
-<br><div class="event">
-<div class="t">Computex 2017</div>
-<div class="d"><p><strong>2017/05/30-06/04</strong><br><strong>Booth #C1226</strong></p>
-<p><a href="http://www.computextaipei.com.tw/" target="_blank"><img src="https://cloud.taiwantradeshows.com.tw/2017/computex/banner/logo-118x119.jpg" alt="" width="118" height="119"></a></p>
-</div>
-</div>
+
 <br><div class="event">
 <div class="t">2017 APR new product release</div>
 <div class="d"><p><strong><span style="color: #ff0000;">HE01ERK</span>&nbsp;<span style="color: #0000ff;">Passive HDMI CAT5e Extender</span><span style="color: #ff0000;">&nbsp;</span></strong></p>
@@ -301,11 +263,7 @@ $this->params["settings"] = $settings;
 <p><a href="/HM44.htm"><strong><img src="http://www.shetech.com.tw/img/news/HM44-L.jpg" width="900" height="471"></strong></a></p>
 </div>
 </div>
-<br><div class="event">
-<div class="t">Secutech Taipei 2017</div>
-<div class="d"><p><strong>2017/04/12-04/14</strong><br><strong>Booth #3511</strong><br><a href="http://www.secutech.com/13/en/" target="_blank"><img src="http://secutech.tw.messefrankfurt.com/content/secutech/taipei/_jcr_content/keyvisual.968!.113!.png" width="968" height="113"></a></p>
-</div>
-</div>
+
 <br><div class="event">
 <div class="t">2017 MAR new product release</div>
 <div class="d"><p><strong><span style="color: #ff0000;">HM41E</span> <span style="color: #0000ff;">4 x 1 HDMI Quad/Multiviewer &amp; Seamless Switcher</span>&nbsp;<span style="color: #ff0000;">(Support Auto-Switching)&nbsp;</span></strong></p>
@@ -361,10 +319,7 @@ $this->params["settings"] = $settings;
 </div>
 </div>
 <br><div class="event">
-<div class="t">CES 2017</div>
-<div class="d"><p><strong>2017/1/5-8</strong><br><strong>Booth #South Hall:&nbsp;20458<br><a href="http://www.cesweb.org/" target="_blank"><img style="height: 113px; width: 235px;" src="http://www.shetech.com.tw/img/news/ces-logo.gif" alt=""></a></strong></p>
-</div>
-</div>
+
 <br><script>
 $(document).ready(function() {
         $('#tabs li a:not(:first)').addClass('inactive');
