@@ -42,11 +42,13 @@ AppAsset::register($this);
             ['label' => 'Product', 'url' => ['/site/search']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
+            ['label' => 'Ecatalog', 'url' => ['/site/ecatalog']],
             ['label' => 'Login', 'url' => ['/site/login']]
         ]) : ([
             ['label' => 'Category', 'url' => ['/category']],
             ['label' => 'Product', 'url' => ['/product']],
             ['label' => 'Post', 'url' => ['/post']],
+            ['label' => 'Ecatalog', 'url' => ['/ecatalog']],
             ['label' => 'Quote', 'url' => ['/quote']],
             ['label' => 'Setting', 'url' => ['/setting']],
             '<li>'

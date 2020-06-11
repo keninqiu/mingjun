@@ -13,6 +13,13 @@ use yii\web\UploadedFile;
 use yii2tech\csvgrid\CsvGrid;
 use yii\data\ArrayDataProvider;
 use yii\data\ActiveDataProvider;
+
+class ProductDetailItem {
+    public function __construct($field, $value) {
+        $this->field = $field;
+        $this->value = $value;
+    }    
+}
 /**
  * ProductController implements the CRUD actions for Product model.
  */
@@ -110,10 +117,13 @@ class ProductController extends Controller
     public function actionCreate()
     {
         $model = new Product();
-        
-        if ($model->load(Yii::$app->request->post())) {
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            $model->documentFile = UploadedFile::getInstance($model, 'documentFile');
+        $detailArray = [""];
+        $model->detail = json_encode($detailArray);
+        $specificationsArray = ["",""];
+        $model->specifications = json_encode($specificationsArray);
+        $post = Yii::$app->request->post();
+        if ($model->load($post)) {
+            $model = $this->updateModelFields($model, $post);
             if ($model->upload()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             }
@@ -127,6 +137,44 @@ class ProductController extends Controller
         
     }
 
+    private function updateModelFields($model, $post) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            $model->imageFile1 = UploadedFile::getInstance($model, 'imageFile1');
+            $model->imageFile2 = UploadedFile::getInstance($model, 'imageFile2');
+            $model->imageFile3 = UploadedFile::getInstance($model, 'imageFile3');
+            $model->imageFile4 = UploadedFile::getInstance($model, 'imageFile4');
+            $model->imageFile5 = UploadedFile::getInstance($model, 'imageFile5');
+            $model->documentFile = UploadedFile::getInstance($model, 'documentFile');
+
+            $fields = $post["detail_field"];
+            $values = $post["detail_value"];
+            if($fields && $values) {
+                $details = [];
+                for($i=0;$i<count($fields);$i++) {
+                    $field = $fields[$i];
+                    $value = $values[$i];
+                    if($field || $value) {
+                        $item = new ProductDetailItem($field, $value);
+                        array_push($details, $item);                        
+                    }
+                }
+                $model->detail = json_encode($details);                
+            }
+
+            $specification_field = $post["specification_field"];
+            if($specification_field) {
+                $specifications = [];
+                for($i=0;$i<count($specification_field);$i++) {
+                    $item = $specification_field[$i];
+                    if($item) {
+                        array_push($specifications, $item);
+                    }
+                    
+                }
+                $model->specifications = json_encode($specifications);                   
+            }
+            return $model;
+    }
     /**
      * Updates an existing Product model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -137,11 +185,11 @@ class ProductController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post())) {
-            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
-            $model->documentFile = UploadedFile::getInstance($model, 'documentFile');
+        $post = Yii::$app->request->post();
+        if ($model->load($post)) {
+            $model = $this->updateModelFields($model, $post);
             if ($model->upload()) {
+
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }   

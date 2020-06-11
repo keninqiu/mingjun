@@ -24,7 +24,7 @@ $this->params["settings"] = $settings;
         <div class="togglet">
 
                 <a name="faq20"></a>
-                                <h4>What kind of wire to use with SC&amp;T Twisted Pair Transmission products?
+                                <h4>What kind of wire to use with FORESIGHT Twisted Pair Transmission products?
 </h4>        </div>
         <div class="togglec" style="display: none;">
                         <h3><p>Use UTP (unshielded twisted pair) CAT 5 24 AWG (or over) to have the best transmission quality performance. To use STP (shielded twisted pair) cable, the shielded would cause internal signal interference, so the transmission range would be shorter (1.5KM---&gt;0.8KM) than UTP cable.<br>Un-twisted wire not to be recommended, which easy have interference and range would be shorter.</p>
@@ -34,17 +34,17 @@ $this->params["settings"] = $settings;
         <div class="togglet">
 
                 <a name="faq19"></a>
-                                <h4>Can RJ11 ordinary telephone wire be used with SC&amp;T Twisted Pair Transmission products?
+                                <h4>Can RJ11 ordinary telephone wire be used with FORESIGHT Twisted Pair Transmission products?
 </h4>        </div>
         <div class="togglec" style="display: none;">
-                        <h3><p>Yes, SC&amp;T Video Transceivers could use ordinary telephone wire to transmit and the range up to 300 meters. But the interference would occur easily, therefore we do not recommend this solution unless special environment requested.</p>
+                        <h3><p>Yes, FORESIGHT Video Transceivers could use ordinary telephone wire to transmit and the range up to 300 meters. But the interference would occur easily, therefore we do not recommend this solution unless special environment requested.</p>
 </h3>        </div>
 </div>
 <div class="toggle faq">
         <div class="togglet">
 
                 <a name="faq18"></a>
-                                <h4>Can Category 6 wire be used with SC&amp;T Twisted Pair Transmission products?
+                                <h4>Can Category 6 wire be used with FORESIGHT Twisted Pair Transmission products?
 </h4>        </div>
         <div class="togglec" style="display: none;">
                         <h3><p>Yes, Use category 6 twisted pair wire, the range would be longer and have highly interference immunity.</p>
@@ -57,27 +57,27 @@ $this->params["settings"] = $settings;
                                 <h4>Can UTP wire to put with other wires in a multi pair wire bundle?
 </h4>        </div>
         <div class="togglec" style="display: none;">
-                        <h3><p>Yes, One of benefits to use SC&amp;T transceivers is interference rejection. SC&amp;T video signals can reside in the same wire bundle as multiple video signals, telephone wire, Ethernet, coaxial...etc. Power wire will not to be recommended to put in the same bundle to avoid interference.</p>
+                        <h3><p>Yes, One of benefits to use FORESIGHT transceivers is interference rejection. FORESIGHT video signals can reside in the same wire bundle as multiple video signals, telephone wire, Ethernet, coaxial...etc. Power wire will not to be recommended to put in the same bundle to avoid interference.</p>
 </h3>        </div>
 </div>
 <div class="toggle faq">
         <div class="togglet">
 
                 <a name="faq16"></a>
-                                <h4>Can spare pairs in an existing CAT 5 network cable to be used with SC&amp;T Twisted Pair Transmission products?
+                                <h4>Can spare pairs in an existing CAT 5 network cable to be used with FORESIGHT Twisted Pair Transmission products?
 </h4>        </div>
         <div class="togglec" style="display: none;">
-                        <h3><p>Yes, You could use any spare pairs to transmit video image via SC&amp;T products.<br> Normally, PC would use the first and second pairs on the Internet, so the third and fourth pair could be used for video signal transmission, to be sure this cable not through any hub.</p>
+                        <h3><p>Yes, You could use any spare pairs to transmit video image via FORESIGHT products.<br> Normally, PC would use the first and second pairs on the Internet, so the third and fourth pair could be used for video signal transmission, to be sure this cable not through any hub.</p>
 </h3>        </div>
 </div>
 <div class="toggle faq">
         <div class="togglet">
 
                 <a name="faq15"></a>
-                                <h4>What is the advantage to use SC&amp;T Twisted Pair Transmission products? SMART, FAST, COST EFFECTIVE SOLUTION
+                                <h4>What is the advantage to use FORESIGHT Twisted Pair Transmission products? SMART, FAST, COST EFFECTIVE SOLUTION
 </h4>        </div>
         <div class="togglec" style="display: none;">
-                        <h3><p>1.Coaxial cabling transmission over 200 meters (RG59), the video signal would loss and have bad video image. Using SC&amp;T passive video transceiver range could up to 300 meters (Color), 600 meters (B/W), even 1KM, 2.4KM to work with active transceiver.<br>2.To use SC&amp;T TDP414V/TTP414V 4 channel transceiver/cable hub, only need one single CAT 5 cable to transmit 4 video signals for cable saving and fast installation.<br>3.CAT 5 cable cost is only half of Coaxial cable and much more easy installation than coaxial cable.</p>
+                        <h3><p>1.Coaxial cabling transmission over 200 meters (RG59), the video signal would loss and have bad video image. Using FORESIGHT passive video transceiver range could up to 300 meters (Color), 600 meters (B/W), even 1KM, 2.4KM to work with active transceiver.<br>2.To use FORESIGHT TDP414V/TTP414V 4 channel transceiver/cable hub, only need one single CAT 5 cable to transmit 4 video signals for cable saving and fast installation.<br>3.CAT 5 cable cost is only half of Coaxial cable and much more easy installation than coaxial cable.</p>
 </h3>        </div>
 </div>
 <div class="toggle faq">
@@ -87,47 +87,47 @@ $this->params["settings"] = $settings;
                                 <h4>Can use one single CAT 5 network cable to transmit video signals and control data?
 </h4>        </div>
         <div class="togglec" style="display: none;">
-                        <h3><p>Yes, using 4 pairs CAT 5 twisted pair cable that could use SC&amp;T model TTP414V/TTP444 to transmit 4 set video signals. You can also use our TTP414VD to transmit 3 video signals and one data signal (RS422, RS485).</p>
+                        <h3><p>Yes, using 4 pairs CAT 5 twisted pair cable that could use FORESIGHT model TTP414V/TTP444 to transmit 4 set video signals. You can also use our TTP414VD to transmit 3 video signals and one data signal (RS422, RS485).</p>
 </h3>        </div>
 </div>
 <div class="toggle faq">
         <div class="togglet">
 
                 <a name="faq13"></a>
-                                <h4>Can SC&amp;T devices transmit RS-422, RS-485 signal?
+                                <h4>Can FORESIGHT devices transmit RS-422, RS-485 signal?
 </h4>        </div>
         <div class="togglec" style="display: none;">
-                        <h3><p>Yes, SC&amp;T model TTP414VD can transmit one data control signal, TTA111AV can transmit 2 set data control signal (RS422, RS485).</p>
+                        <h3><p>Yes, FORESIGHT model TTP414VD can transmit one data control signal, TTA111AV can transmit 2 set data control signal (RS422, RS485).</p>
 </h3>        </div>
 </div>
 <div class="toggle faq">
         <div class="togglet">
 
                 <a name="faq12"></a>
-                                <h4>Can SC&amp;T devices support broadband RF/VHF/UHF?
+                                <h4>Can FORESIGHT devices support broadband RF/VHF/UHF?
 </h4>        </div>
         <div class="togglec" style="display: none;">
-                        <h3><p>No, SC&amp;T transceivers do not support RF/VHF/UHF signal. Unless special design demodulator and modulator to be used.</p>
+                        <h3><p>No, FORESIGHT transceivers do not support RF/VHF/UHF signal. Unless special design demodulator and modulator to be used.</p>
 </h3>        </div>
 </div>
 <div class="toggle faq">
         <div class="togglet toggleta">
 
                 <a name="faq11"></a>
-                                <h4>Can SC&amp;T devices transmit VGA?
+                                <h4>Can FORESIGHT devices transmit VGA?
 </h4>        </div>
         <div class="togglec" style="display: block;">
-                        <h3><p>Yes, you could use VGA CONVERTER (Analog to Digital) can be transmitted with SC&amp;T.</p>
+                        <h3><p>Yes, you could use VGA CONVERTER (Analog to Digital) can be transmitted with FORESIGHT.</p>
 </h3>        </div>
 </div>
 <div class="toggle faq">
         <div class="togglet toggleta">
 
                 <a name="faq10"></a>
-                                <h4>Can SC&amp;T devices transmit satellite or cable TV?
+                                <h4>Can FORESIGHT devices transmit satellite or cable TV?
 </h4>        </div>
         <div class="togglec" style="display: block;">
-                        <h3><p>No, SC&amp;T transceivers do not support the wide bandwidth cable TV signal. However, a single channel can be sent if a demodulator and modulator are used.</p>
+                        <h3><p>No, FORESIGHT transceivers do not support the wide bandwidth cable TV signal. However, a single channel can be sent if a demodulator and modulator are used.</p>
 </h3>        </div>
 </div>
 <div class="toggle faq">
@@ -177,7 +177,7 @@ $this->params["settings"] = $settings;
                                 <h4>Why the video image too bright or snow, wavy when testing or using active twisted pair transmission products TTA111V/TTA111AV?
 </h4>        </div>
         <div class="togglec" style="display: none;">
-                        <h3><p>Please correct the following two conditions:<br>A. These products are designed for long range transmission, the unit built in video amplifier function. If your transmission range under 100 meters, the video gain function is too big to have snow or wavy, bright image occurred. Recommend to use them with range at least over 100 meters or alternate SC&amp;T passive video transceivers TTP111 series for short range transmission as well as cost saving.<br>B. The active receiver has "5 position distance range switch" for different range transmission. Please switch to appropriate range upon your application to avoid any weak or bad image.</p>
+                        <h3><p>Please correct the following two conditions:<br>A. These products are designed for long range transmission, the unit built in video amplifier function. If your transmission range under 100 meters, the video gain function is too big to have snow or wavy, bright image occurred. Recommend to use them with range at least over 100 meters or alternate FORESIGHT passive video transceivers TTP111 series for short range transmission as well as cost saving.<br>B. The active receiver has "5 position distance range switch" for different range transmission. Please switch to appropriate range upon your application to avoid any weak or bad image.</p>
 </h3>        </div>
 </div>
 <div class="toggle faq">
@@ -207,17 +207,17 @@ $this->params["settings"] = $settings;
                                 <h4>How to protect high value camera, DVR and CCTV image processor/monitoring equipment destroyed from high voltage surges from nearby lightning strikes?
 </h4>        </div>
         <div class="togglec" style="display: none;">
-                        <h3><p>To add SC&amp;T surge protection device on the back of camera and front of CCTV image processor/monitoring equipments. Small money to save high value CCTV equipments.</p>
+                        <h3><p>To add FORESIGHT surge protection device on the back of camera and front of CCTV image processor/monitoring equipments. Small money to save high value CCTV equipments.</p>
 </h3>        </div>
 </div>
 <div class="toggle faq">
         <div class="togglet">
 
                 <a name="faq1"></a>
-                                <h4>Will RF interfere with the video signal when using SC&amp;T devices?
+                                <h4>Will RF interfere with the video signal when using FORESIGHT devices?
 </h4>        </div>
         <div class="togglec" style="display: none;">
-                        <h3><p>No, SC&amp;T device is highly immune to interference. CAT 5 UTP twisted pair wire can immunity the RF interference. The only concerned is high power (signal noise ratio) RF signal would have video interference occurred, neither coaxial nor twisted pair cabling transmission. You could try to use twisted pair wire with overall aluminum foil Mylar shield with one drain wire and braided shield. Or move away from high interference area.</p>
+                        <h3><p>No, FORESIGHT device is highly immune to interference. CAT 5 UTP twisted pair wire can immunity the RF interference. The only concerned is high power (signal noise ratio) RF signal would have video interference occurred, neither coaxial nor twisted pair cabling transmission. You could try to use twisted pair wire with overall aluminum foil Mylar shield with one drain wire and braided shield. Or move away from high interference area.</p>
 </h3>        </div>
 </div>
 		        </div>

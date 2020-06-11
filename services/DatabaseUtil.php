@@ -7,6 +7,7 @@ use app\models\Category;
 use app\models\Product;
 use app\models\Setting;
 use app\models\Post;
+use app\models\Ecatalog;
 
 class DatabaseUtil
 {
@@ -380,6 +381,10 @@ class DatabaseUtil
         }
 
         return $productInfo;
+    }
+
+    public function getEcatalogs() {
+        return Ecatalog::find()->all();
     }
 
     public function saveCategory($parent_id,$name) {

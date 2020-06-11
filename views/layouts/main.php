@@ -98,6 +98,7 @@ $currentUrl = Yii::$app->request->url;
         </ul>
       </li>
       <li><a href="/solution.htm" title="Solutions">Solutions</a></li>
+      <li><a href="/site/ecatalog" title="Solutions">E-Catalog</a></li>
       <li><a href="/supplier_news.htm" title="News and Press Release">News and Press Release</a></li>
       <li><a href="/faq.htm" title="FAQ">FAQ</a></li>
       <li><a href="/site/about" title="About">About</a></li>

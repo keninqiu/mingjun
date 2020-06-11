@@ -1,3 +1,18 @@
+alter table Ecatalog ADD column url varchar(200);
+
+CREATE TABLE Ecatalog (
+     id INT(11) NOT NULL AUTO_INCREMENT,
+     image varchar(200),
+     document varchar(200),
+     PRIMARY KEY (id)
+);
+
+alter table product ADD column image1 varchar(200);
+alter table product ADD column image2 varchar(200);
+alter table product ADD column image3 varchar(200);
+alter table product ADD column image4 varchar(200);
+alter table product ADD column image5 varchar(200);
+
 CREATE TABLE post (
      id INT(11) NOT NULL AUTO_INCREMENT,
      title varchar(500) not null,

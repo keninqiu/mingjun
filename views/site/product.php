@@ -3,11 +3,11 @@ use yii\widgets\Breadcrumbs;
 $this->title = $details["product"]["title"]. " ".$details["product"]["description"];
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => $details["product"]["meta_description"]
+    'content' => $details["product"]["meta_description"]?$details["product"]["meta_description"]:"The ".$details["product"]["title"]." is offered by FORESIGHT CCTV Inc., a leader leading professional CCTV manufacturer in th field of CCTV Security Products.We design, develop and manufacture a full range of CCTV &amp; IP Smart Cabling products on Twisted Pair Transmission, IP Cabling Transmission, CAT5 VGA Transmission, Data Transmission, Coaxial Cabling system for Video Distributor &amp; Amplifier, Surge Protector, Solution Provider for Video Interference, Power Center, other accessories...etc."
 ]);
 $this->registerMetaTag([
     'name' => 'keywords',
-    'content' => $details["product"]["meta_keywords"]
+    'content' => $details["product"]["meta_keywords"]?$details["product"]["meta_keywords"]:$details["product"]["title"]. " ".$details["product"]["description"]
 ]);
 $customLink = [];
 
@@ -44,7 +44,33 @@ echo Breadcrumbs::widget([
 </div>
 <div class="row">
     <div class="col-md-4">
-    	<img class="img-responsive" src="<?php echo $details["product"]["image"]?>" alt="product image">
+      <?php 
+      if(!$details["product"]["image1"]) {
+      ?>
+      <img class="img-responsive" src="<?php echo $details["product"]["image"]?>" alt="product image">
+      <?php
+      } else {
+        $images=[
+          '<img src="'.$details["product"]["image"].'">', 
+          '<img src="'.$details["product"]["image1"].'">'
+        ];
+        if($details["product"]["image2"]) {
+          array_push($images, '<img src="'.$details["product"]["image2"].'">');
+        }
+        if($details["product"]["image3"]) {
+          array_push($images, '<img src="'.$details["product"]["image3"].'">');
+        }
+        if($details["product"]["image4"]) {
+          array_push($images, '<img src="'.$details["product"]["image4"].'">');
+        }
+        if($details["product"]["image5"]) {
+          array_push($images, '<img src="'.$details["product"]["image5"].'">');
+        }                        
+        echo yii\bootstrap\Carousel::widget(['items'=>$images]);
+      }
+      ?>
+    	
+
     </div>
     <div class="col-md-8">
     	<h3>

@@ -127,6 +127,17 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionEcatalog() {
+        $dbUtil = new DatabaseUtil();
+        $settingArray = $dbUtil->getSettings();
+        $ecatalogs = $dbUtil->getEcatalogs();  
+
+        return $this->render('ecatalog',[
+            'ecatalogs' => $ecatalogs,
+            'settings' => $settingArray
+        ]);                
+    }
+
     public function actionProduct() {
         $dbUtil = new DatabaseUtil();
         $settingArray = $dbUtil->getSettings();
